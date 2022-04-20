@@ -2,15 +2,15 @@ import src.Level as Level
 
 class Level3(Level):
     
-    def __init__(self, name, index_level, countdown, cars, obstacles, environments, poin, player):
-        self.__name  = name
-        self.__index_level = index_level
-        self.__countdown = countdown
-        self.cars = cars
-        self.obstacles = obstacles
-        self.environments = environments
-        self.point = poin
-        self._player = player
+    def __init__(self):
+        self.__name  = None
+        self.__index_level = 1
+        self.__countdown = 0
+        self.cars = []
+        self.obstacles = []
+        self.environments = []
+        self.point = 0
+        self._player = None
 
     def __set_environments(self):
         pass
