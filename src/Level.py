@@ -1,29 +1,27 @@
-class Level:
-    
-    def __init__(self, name, index_level, countdown, cars, obstacles, environments, poin, player):
-        self.__name  = name
-        self.__index_level = index_level
-        self.__countdown = countdown
-        self.cars = cars
-        self.obstacles = obstacles
-        self.environments = environments
-        self.point = poin
-        self._player = player
+from abc import ABC, abstractmethod
 
+class Level(ABC):
+    
+    @abstractmethod
     def __set_environments(self):
         pass
 
+    @abstractmethod
     def __load_cars(self):
         pass
-
+    
+    @abstractmethod
     def __load_obstacles(self):
         pass
-
+    
+    @abstractmethod
     def __load_npc(self):
         pass
-
+    
+    @abstractmethod
     def __load_civilians(self):
         pass
-
+    
+    @abstractmethod
     def start(self):
         pass
