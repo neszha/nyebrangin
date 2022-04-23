@@ -1,4 +1,1 @@
 # nyebrangin
-
-# asdbfjasdb
-# asalSsh
