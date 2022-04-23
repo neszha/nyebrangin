@@ -1,5 +1,6 @@
-import src.Main as Main
+from src.Main import Main
+from src.config import *
 
 if __name__ == "__main__":
-    game = Main()
-    game.open()
+    game = Main(GAME_NAME)
+    game.run()
