@@ -1,3 +1,1 @@
 # nyebrangin
-
-# UML Class Diagram
