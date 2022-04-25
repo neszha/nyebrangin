@@ -18,6 +18,7 @@
 Nyebrangin
 
 ## Deskripsi Proyek
+
 Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
 
 Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan. 
@@ -27,18 +28,41 @@ Player mendapatkan poin saat menjalankan misi dengan durasi waktu tertentu.
 Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat yang dapat dilihat dari kecepatan kendaraan mobil yang berjalan.
 
 ## Dependensi Paket (library) Game 
+
 - Pygame 
 - Random
+
 ## Cara menjalankan Game (cara bermain) 
-1. Diawali tampilan menu : Start dan Exit
-2. Terdapat pilihan tingkat kesulitan Game : Easy, Medium, Hard.
-3. Setelah memilih level player akan masuk Game berdasarkan tingkat kesulitan yang telah dipilih
-4. Di dalam Game terdapat Mobil yang berjalan,Player, dan Civillian.
-5. Menjalankan misi untuk menyebrangkan civilian yang berada di pinggir jalan.
-6. Player memiliki 3 nyawa dan jika tertabrak mobil nyawa akan berkurang.
-7. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
-8. Jika player sudah menjalani di semua level, maka misi selesai.
-9. Jika player gagal dalam misi di level yang dijalani. Maka otomatis mengulang di level yang sama dijalankan.
-10. GAME SELESAI dan Menampilkan hasil Skor yang di dapat.
+
+1. Menampilkan menu home : 
+    - Start 
+    - Exit
+
+    <br />
+
+2. Terdapat pilihan tingkat kesulitan(level) Game : 
+    - Easy 
+    - Medium
+    - Hard
+    
+    <br />
+
+3. Masuk ke dalam Game berdasarkan pilihan Level.
+
+4. Pada Game play terdapat Mobil yang berjalan,Player, dan Civillian.
+
+5. Mulai permainan dengan menjalankan player kearah civillian dan membantunya.
+
+6. Jalankan misi untuk menyebrangkan civilian hingga selesai.
+
+7. Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan
+
+8. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
+
+9. Jika player sudah menjalani di semua level, maka game selesai.
+
+10. GAME SELESAI dan Menampilkan hasil Skor.
+
 ## UML Class Diagram Proyek
+
 ## Kontributor Pengembangan Game
