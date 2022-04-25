@@ -14,10 +14,10 @@
 | 120140039  | Tara Nadani Mozart  |
 
 
-## Judul Proyek 
+## Judul Game 
 Nyebrangin
 
-## Deskripsi Proyek
+## Deskripsi Game
 
 Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
 
@@ -63,6 +63,6 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 
 10. GAME SELESAI dan Menampilkan hasil Skor.
 
-## UML Class Diagram Proyek
+## UML Class Diagram Game
 
 ## Kontributor Pengembangan Game
