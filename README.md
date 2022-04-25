@@ -1,4 +1,11 @@
 # Nyebrangin
+ By Developer PULANGMEN
+
+ | Nama  | NIM |
+| ----- | --- |
+| Irsan   | 120140043 |
+| Fanesa  | 1201400189  |
+
 
 ## Judul Proyek 
 Nyebrangin
