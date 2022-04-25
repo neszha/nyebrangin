@@ -1,7 +1,9 @@
 # Nyebrangin
 ## By Developer PULANGMEN
 
- | Nama  | NIM |
+| KELOMPOK  | RB-05 |
+
+| Nama  | NIM |
 | ----- | --- |
 | Irsan   | 120140043 |
 | Fanesa  | 1201400189  |
