@@ -1,8 +1,8 @@
 # Nyebrangin
 ## By Developer PULANGMEN
 
-| KELOMPOK  | RB-05 |
-| --------  | ----- |
+| KELOMPOK : RB-05 |
+| ---------------- |
 
 | Nama  | NIM |
 | ----- | --- |
