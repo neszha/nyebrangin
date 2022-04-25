@@ -25,7 +25,6 @@ class Main:
             # Update tampilan game.
             self.screen.fill('black')
             pygame.display.update()
-            print("asfd")
             self.clock.tick(FPS)
 
     def start_level(self):
