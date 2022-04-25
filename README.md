@@ -1,5 +1,5 @@
 # NYEBRANGIN GAME
-## Game by developer : PULANGMEN
+     Game developer by : PULANGMEN
 
 | KELOMPOK : PULANGMEN |
 | ---------------- |
@@ -16,8 +16,16 @@
 
 ## Judul Proyek 
 Nyebrangin
+
 ## Deskripsi Proyek
-Tentang player yang ingin menyebrangkan civilian dari sisi tempat yang berbeda. Juga dengan kendaraan mobil yang berjalan dengan kecepatan berdasarkan level yang dijalani
+Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
+
+Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan. 
+
+Player mendapatkan poin saat menjalankan misi dengan durasi waktu tertentu. 
+
+Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat yang dapat dilihat dari kecepatan kendaraan mobil yang berjalan.
+
 ## Dependensi Paket (library) Game 
 - Pygame 
 - Random
@@ -32,5 +40,5 @@ Tentang player yang ingin menyebrangkan civilian dari sisi tempat yang berbeda. 
 8. Jika player sudah menjalani di semua level, maka misi selesai.
 9. Jika player gagal dalam misi di level yang dijalani. Maka otomatis mengulang di level yang sama dijalankan.
 10. GAME SELESAI dan Menampilkan hasil Skor yang di dapat.
-## UML class diagram proyek
-## Kontributor Pengembangan Game.
+## UML Class Diagram Proyek
+## Kontributor Pengembangan Game
