@@ -1,5 +1,7 @@
 import pygame, sys
 from src.config import *
+from src.state import *
+from src.Menu import Menu
 
 class Main:
 
@@ -15,6 +17,9 @@ class Main:
         pygame.display.set_caption(self.game_name)
         self.clock = pygame.time.Clock()
 
+        # Daftar halaman game.
+        self.menu = Menu()
+
     def run(self):
         while True:
             # Mengawasi event exit.
@@ -22,13 +27,18 @@ class Main:
                 if event.type == pygame.QUIT:
                     self.exit()
 
+                if event.type == pygame.MOUSEMOTION:
+                    print(pygame.mouse.get_pos())
+
+            self.watch_page()
+
             # Update tampilan game.
-            self.screen.fill('black')
             pygame.display.update()
             self.clock.tick(FPS)
 
-    def start_level(self):
-        pass
+    def watch_page(self):
+        if PAGE == 'menu':
+            self.menu.render()
  
     def exit(self): 
         pygame.quit()
