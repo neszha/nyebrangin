@@ -14,9 +14,6 @@
 | 120140039  | Tara Nadani Mozart  |
 
 
-## Judul Game 
-Nyebrangin
-
 ## Deskripsi Game
 
 Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
