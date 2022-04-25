@@ -1,8 +1,7 @@
 # Nyebrangin
 
 ## Judul Proyek : Nyebrangin
-## Deskripsi Proyek : Tentang player yang ingin menyebrangkan orang orang sipil dari sisi tempat yang berbeda. 
-Juga dengan kendaraan mobil yang berjalan dengan kecepatan berdasarkan level yang dijalani
+## Deskripsi Proyek : Tentang player yang ingin menyebrangkan orang orang sipil dari sisi tempat yang berbeda. Juga dengan kendaraan mobil yang berjalan dengan kecepatan berdasarkan level yang dijalani
 ## Dependensi paket (library) yang dibutuhkan untuk menjalankan aplikasi : Pygame dan Random
 ## Cara menjalankan aplikasi (cara bermain) : 
 1. Diawali tampilan menu : Start dan Exit
