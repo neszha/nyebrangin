@@ -24,9 +24,9 @@ Tentang player yang ingin menyebrangkan civilian dari sisi tempat yang berbeda. 
 ## Cara menjalankan Game (cara bermain) 
 1. Diawali tampilan menu : Start dan Exit
 2. Terdapat pilihan tingkat kesulitan Game : Easy, Medium, Hard.
-3. Masuk ke dalam Game berdasarkan Level yang di jalani
+3. Setelah memilih level player akan masuk Game berdasarkan tingkat kesulitan yang telah dipilih
 4. Di dalam Game terdapat Mobil yang berjalan,Player, dan Civillian.
-5. Menjalankan misi untuk menyebrangkan civilian di sekitar pinggir jalan.
+5. Menjalankan misi untuk menyebrangkan civilian yang berada di pinggir jalan.
 6. Player memiliki 3 nyawa dan jika tertabrak mobil nyawa akan berkurang.
 7. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
 8. Jika player sudah menjalani di semua level, maka misi selesai.
