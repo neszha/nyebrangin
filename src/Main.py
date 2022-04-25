@@ -13,7 +13,6 @@ class Main:
 
         # Menyiapkan game.
         pygame.init()
-        self.screen = pygame.display.set_mode((WIDTH, HEIGTH))
         pygame.display.set_caption(self.game_name)
         self.clock = pygame.time.Clock()
 
@@ -25,7 +24,7 @@ class Main:
             # Mengawasi event exit.
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.exit()
+                    self.menu.exit()
 
                 if event.type == pygame.MOUSEMOTION:
                     print(pygame.mouse.get_pos())
@@ -39,7 +38,3 @@ class Main:
     def watch_page(self):
         if PAGE == 'menu':
             self.menu.render()
- 
-    def exit(self): 
-        pygame.quit()
-        sys.exit()

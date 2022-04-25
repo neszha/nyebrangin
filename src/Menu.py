@@ -1,20 +1,22 @@
-import pygame
+import pygame, sys
 from src.config import *
 from random import randrange
 from src.components.Button import Button
-from src.components.CarMenuAnimation import CarMenuAnimation
-from src.components.CloudMenuAnimation import CloudMenuAnimation
+from src.components.CarMenuAnimation import CarMenuAnimation as Car
+from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
 
 class Menu:
     
     def __init__(self):
         self.__screen = pygame.display.set_mode((WIDTH, HEIGTH))
         self.__load_components()
+        
 
     def __load_components(self):
         # Membuat background.
         self.__background = pygame.Surface((WIDTH, HEIGTH))
         self.__background.fill(pygame.Color(175, 208, 233))
+        print(self.__background)
 
         # Menyiapkan komponen gambar.
         self.__grass = pygame.image.load('assets/grasses/menu-grass.png').convert()
@@ -23,9 +25,9 @@ class Menu:
         self.__arrow_direction = pygame.image.load('assets/images/arrow-direction.png').convert_alpha()
         self.__cars = []
         self.__clouds = []
-        for i in range(4): self.__cars.append(CarMenuAnimation('to-left', randrange(2, 6)))            
-        for i in range(4): self.__cars.append(CarMenuAnimation('to-right', randrange(2, 6)))
-        for i in range(8): self.__clouds.append(CloudMenuAnimation())            
+        for i in range(4): self.__cars.append(Car('to-left', randrange(2, 6)))            
+        for i in range(4): self.__cars.append(Car('to-right', randrange(2, 6)))
+        for i in range(8): self.__clouds.append(Cloud())            
 
         # Menetapkan poisis komponene mengunakan rectangle.
         self.__grass_rect = self.__grass.get_rect(bottomleft = (0, HEIGTH))
@@ -37,7 +39,7 @@ class Menu:
         self.__buttons = [
             Button('assets/buttons/setting.png', [40, 40], self.open_settings),
             Button('assets/buttons/start.png', [WIDTH/2, 280], self.open_settings),
-            Button('assets/buttons/exit.png', [WIDTH/2, 380], self.open_settings),
+            Button('assets/buttons/exit.png', [WIDTH/2, 380], self.exit),
         ]
 
     def render(self):
@@ -53,3 +55,7 @@ class Menu:
 
     def open_settings(self):
         print('open settings')
+    
+    def exit(self):
+        pygame.quit()
+        sys.exit()
