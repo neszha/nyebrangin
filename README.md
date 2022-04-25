@@ -36,7 +36,7 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
     - Exit
 
     <br />
-    <img src="assets/Docs/Menu.jpeg" width="400">
+    <img src="assets/Docs/Menu.jpeg" width="500">
 
 2. Terdapat pilihan tingkat kesulitan(level) Game : 
     - Easy 
