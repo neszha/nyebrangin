@@ -4,10 +4,14 @@
 | KELOMPOK : RB-05 |
 | ---------------- |
 
-| Nama  | NIM |
+| NIM  | Nama |
 | ----- | --- |
-| Irsan   | 120140043 |
-| Fanesa  | 1201400189  |
+| 119140117  | Chantika Aurrelia |
+| 120140149  | Dewi Anggraini  |
+| 120140189  | Fanesa Hadi Pramana  |
+| 120140043  | Irsan Romardi Harahap  |
+| 120140071  | Muhammad Rizky Fahreza Gusti  |
+| 120140039  | Tara Nadani Mozart  |
 
 
 ## Judul Proyek 
