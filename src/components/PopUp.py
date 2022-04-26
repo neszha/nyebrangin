@@ -10,7 +10,6 @@ class PopUp:
         self._show = False
         self.__title = title
         self.__background = background_path
-
         self.__load_componenets()
 
     def __load_componenets(self):
@@ -36,8 +35,9 @@ class PopUp:
             self.title.render(screen)
 
     def open(self):
-        self._show = True
-        state.SHOW_POPUP = True
+        if not self._show and not state.SHOW_POPUP:
+            self._show = True
+            state.SHOW_POPUP = True
 
     def close(self):
         self._show = False

@@ -6,7 +6,7 @@ from src.components.Checkbox import CheckBox
 class Settings(PopUp):
 
     def __init__(self):
-        super().__init__('Settings', 'assets/backgrounds/layer-settings.png')
+        super().__init__('Settings', 'assets/backgrounds/settings.png')
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
@@ -25,10 +25,10 @@ class Settings(PopUp):
         self.check_sound_fx = CheckBox([check_pos_x, check_pos_y + 80], self.__check_sound_fx_handdler)
 
     def __check_music_handdler(self):
-        print('check music')
+        print('check music', self.check_music.checked)
 
     def __check_sound_fx_handdler(self):
-        print('check sound fx')
+        print('check sound fx', self.check_sound_fx.checked)
 
     def render(self, screen):
         if self._show:

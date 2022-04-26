@@ -2,7 +2,7 @@ import pygame as pg
 
 class Button:
     
-    def __init__(self, path, positions, command0, command1 = False):
+    def __init__(self, path, positions, command0=False, command1=False, command_data=False, data=None):
         self.__positions = positions
         self.__btn = pg.image.load(path).convert_alpha()
         self.__btn_rect = self.__btn.get_rect(center = self.__positions)
@@ -10,6 +10,8 @@ class Button:
         self.__clicked = False
         self.__command0 = command0
         self.__command1 = command1
+        self.__command_data = command_data
+        self.__data = data
 
     def render(self, screen):
         self.__hover_detector()
@@ -26,8 +28,9 @@ class Button:
     def __click_detector(self):
         if self.__hovered and pg.mouse.get_pressed()[0] and not self.__clicked:
             self.__clicked = True
-            self.__command0()
+            if self.__command0: self.__command0()
             if self.__command1: self.__command1()
+            if self.__command_data: self.__command_data(self.__data)
         if not pg.mouse.get_pressed()[0]: self.__clicked = False
         
 

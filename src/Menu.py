@@ -3,9 +3,10 @@ from src.config import *
 import src.state as state
 from random import randrange
 from src.components.Button import Button
+from src.popups.Settings import Settings
+from src.popups.Levels import BoxLevels
 from src.components.CarMenuAnimation import CarMenuAnimation as Car
 from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
-from src.components.Settings import Settings
 
 class Menu:
     
@@ -37,16 +38,16 @@ class Menu:
 
         # Load komponen pop-up.
         self.__settings = Settings()
+        self.__levels = BoxLevels()
 
         # Load komponen tombol.
         self.__buttons = [
             Button('assets/buttons/setting.png', [40, 40], self.__settings.open),
-            Button('assets/buttons/start.png', [WIDTH/2, 280], self.exit),
+            Button('assets/buttons/start.png', [WIDTH/2, 280], self.__levels.open),
             Button('assets/buttons/exit.png', [WIDTH/2, 380], self.exit),
         ]
 
     def render(self):
-        # Render komponene ke layar.
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__grass, self.__grass_rect)
         self.__screen.blit(self.__road, self.__road_rect)
@@ -56,6 +57,7 @@ class Menu:
         self.__screen.blit(self.__arrow_direction, self.__arrow_direction_rect)
         for button in self.__buttons: button.render(self.__screen)
         self.__settings.render(self.__screen)
+        self.__levels.render(self.__screen)
     
     def exit(self):
         if not state.SHOW_POPUP:
