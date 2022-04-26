@@ -1,7 +1,7 @@
 # NYEBRANGIN GAME
      Game developer by : PULANGMEN
 
-| KELOMPOK : PULANGMEN |
+| KELOMPOK : PULANGMEN - RB05 |
 | ---------------- |
 
 | NIM  | Nama |
@@ -64,3 +64,4 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 ## UML Class Diagram Game
 
 ## Kontributor Pengembangan Game
+
