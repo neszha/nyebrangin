@@ -1,7 +1,7 @@
 # NYEBRANGIN GAME
      Game developer by : PULANGMEN
 
-| KELOMPOK : PULANGMEN |
+| KELOMPOK : PULANGMEN - RB05 |
 | ---------------- |
 
 | NIM  | Nama |
