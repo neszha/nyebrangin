@@ -38,12 +38,7 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
     <br />
     <img src="assets/Docs/Menu.jpeg" width="500">
 
-2. Terdapat pilihan tingkat kesulitan(level) Game : 
-    - Easy 
-    - Medium
-    - Hard
-    
-    <br />
+2. Terdapat pilihan tingkat kesulitan (level) Game.
 
 3. Masuk ke dalam Game berdasarkan pilihan Level.
 
@@ -53,7 +48,7 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 
 6. Jalankan misi untuk menyebrangkan civilian hingga selesai.
 
-7. Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan
+7. Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan.
 
 8. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
 
