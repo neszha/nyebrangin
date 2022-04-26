@@ -11,7 +11,6 @@ class Menu:
     def __init__(self):
         self.__screen = pygame.display.set_mode((WIDTH, HEIGTH))
         self.__load_components()
-        
 
     def __load_components(self):
         # Membuat background.
