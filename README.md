@@ -45,21 +45,6 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
     
     <br />
 
-3. Masuk ke dalam Game berdasarkan pilihan Level.
-
-4. Pada Game play terdapat Mobil yang berjalan,Player, dan Civillian.
-
-5. Mulai permainan dengan menjalankan player kearah civillian dan membantunya.
-
-6. Jalankan misi untuk menyebrangkan civilian hingga selesai.
-
-7. Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan
-
-8. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
-
-9. Jika player sudah menjalani di semua level, maka game selesai.
-
-10. GAME SELESAI dan Menampilkan hasil Skor.
 
 ## UML Class Diagram Game
 
