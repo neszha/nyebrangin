@@ -4,6 +4,7 @@ from random import randrange
 from src.components.Button import Button
 from src.components.CarMenuAnimation import CarMenuAnimation as Car
 from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
+from src.components.Settings import Settings
 
 class Menu:
     
@@ -16,7 +17,6 @@ class Menu:
         # Membuat background.
         self.__background = pygame.Surface((WIDTH, HEIGTH))
         self.__background.fill(pygame.Color(175, 208, 233))
-        print(self.__background)
 
         # Menyiapkan komponen gambar.
         self.__grass = pygame.image.load('assets/grasses/menu-grass.png').convert()
@@ -35,10 +35,13 @@ class Menu:
         self.__text_logo_rect = self.__text_logo.get_rect(center = (WIDTH/2, 138))
         self.__arrow_direction_rect = self.__arrow_direction.get_rect(center = (160, 590))
 
+        # Load komponen pop-up.
+        self.__settings = Settings()
+
         # Load komponen tombol.
         self.__buttons = [
-            Button('assets/buttons/setting.png', [40, 40], self.open_settings),
-            Button('assets/buttons/start.png', [WIDTH/2, 280], self.open_settings),
+            Button('assets/buttons/setting.png', [40, 40], self.__settings.open),
+            Button('assets/buttons/start.png', [WIDTH/2, 280], self.exit),
             Button('assets/buttons/exit.png', [WIDTH/2, 380], self.exit),
         ]
 
@@ -52,9 +55,7 @@ class Menu:
         self.__screen.blit(self.__text_logo, self.__text_logo_rect)
         self.__screen.blit(self.__arrow_direction, self.__arrow_direction_rect)
         for button in self.__buttons: button.render(self.__screen)
-
-    def open_settings(self):
-        print('open settings')
+        self.__settings.render(self.__screen)
     
     def exit(self):
         pygame.quit()
