@@ -1,6 +1,5 @@
-from src.state import *
 from src.config import *
-from src.levels.Level import Level
+import src.state as state
 from src.components.Button import Button
 from src.components.popups.PopUp import PopUp
 
@@ -36,13 +35,15 @@ class BoxLevels(PopUp):
                 btn_pos_y += 140
 
     def __start_level(self, index_level):
-        level = Level(index_level)
+        state.PAGE = 'game-run'
+        state.LEVEL_RUNNING = index_level
         print(f'Start level {index_level}')
+
 
     def render(self, screen):
         if self._show:
             self.render_popup(screen)
             for i in range(len(self.__btn_levels)):
                 btn = self.__btn_levels[i]
-                if (i+1) <= CURRENT_LEVEL: btn.active.render(screen)
+                if (i+1) <= state.CURRENT_LEVEL: btn.active.render(screen)
                 else: btn.not_active.render(screen)

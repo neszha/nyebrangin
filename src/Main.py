@@ -2,6 +2,7 @@ import pygame
 from src.config import *
 import src.state as state 
 from src.Menu import Menu
+from src.Level import Level
 
 class Main:
 
@@ -18,6 +19,13 @@ class Main:
 
         # Daftar halaman game.
         self.menu = Menu()
+        self.level = Level()
+
+    def __watch_page_change(self):
+        if state.PAGE == 'menu':
+            self.menu.render()
+        elif state.PAGE == 'game-run':
+            print('game run')
 
     def run(self):
         while True:
@@ -25,16 +33,10 @@ class Main:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.menu.exit()
-
                 if event.type == pygame.MOUSEMOTION:
                     print(pygame.mouse.get_pos())
-
-            self.watch_page()
-
+            
             # Update tampilan game.
+            self.__watch_page_change()
             pygame.display.update()
             self.clock.tick(FPS)
-
-    def watch_page(self):
-        if state.PAGE == 'menu':
-            self.menu.render()
