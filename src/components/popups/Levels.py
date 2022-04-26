@@ -1,5 +1,6 @@
 from src.state import *
 from src.config import *
+from src.levels.Level import Level
 from src.components.PopUp import PopUp
 from src.components.Button import Button
 
@@ -34,8 +35,9 @@ class BoxLevels(PopUp):
                 btn_pos_x = (WIDTH/2) - (bg_size_x/2) + 136
                 btn_pos_y += 140
 
-    def __start_level(self, level):
-        print(f'Start level {level}')
+    def __start_level(self, index_level):
+        level = Level(index_level)
+        print(f'Start level {index_level}')
 
     def render(self, screen):
         if self._show:
