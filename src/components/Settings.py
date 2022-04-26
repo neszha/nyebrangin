@@ -1,14 +1,12 @@
-from src.state import *
 from src.config import *
-from src.components.PopUp import PopUp
 from src.components.Text import Text
+from src.components.PopUp import PopUp
 from src.components.Checkbox import CheckBox
 
 class Settings(PopUp):
 
     def __init__(self):
         super().__init__('Settings', 'assets/backgrounds/layer-settings.png')
-
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
@@ -18,17 +16,24 @@ class Settings(PopUp):
         txt_pos_x = (WIDTH/2) - (bg_size_x/4)
         txt_pos_y = (HEIGTH/2) - 30
         self.txt_music = Text('Music', [txt_pos_x, txt_pos_y], 40)
-        self.txt_sound = Text('Sound FX', [txt_pos_x, txt_pos_y + 80], 40)
+        self.txt_sound_fx = Text('Sound FX', [txt_pos_x, txt_pos_y + 80], 40)
 
         ## Load komponene checkbox.
-        self.check_music = CheckBox([100, 100], self.__check_handdler)
+        check_pos_x = txt_pos_x + (bg_size_x/2)
+        check_pos_y = txt_pos_y
+        self.check_music = CheckBox([check_pos_x, check_pos_y], self.__check_music_handdler)
+        self.check_sound_fx = CheckBox([check_pos_x, check_pos_y + 80], self.__check_sound_fx_handdler)
 
-    def __check_handdler(self):
-        print('check')
+    def __check_music_handdler(self):
+        print('check music')
+
+    def __check_sound_fx_handdler(self):
+        print('check sound fx')
 
     def render(self, screen):
         if self._show:
             self.render_popup(screen)
             self.txt_music.render(screen)
-            self.txt_sound.render(screen)
+            self.txt_sound_fx.render(screen)
             self.check_music.render(screen)
+            self.check_sound_fx.render(screen)

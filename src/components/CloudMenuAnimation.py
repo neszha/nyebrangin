@@ -1,6 +1,6 @@
 import pygame
-from random import randrange, uniform
 from src.config import *
+from random import randrange, uniform
 
 
 class CloudMenuAnimation:

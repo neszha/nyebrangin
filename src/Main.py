@@ -1,6 +1,6 @@
-import pygame, sys
+import pygame
 from src.config import *
-from src.state import *
+import src.state as state 
 from src.Menu import Menu
 
 class Main:
@@ -36,5 +36,5 @@ class Main:
             self.clock.tick(FPS)
 
     def watch_page(self):
-        if PAGE == 'menu':
+        if state.PAGE == 'menu':
             self.menu.render()

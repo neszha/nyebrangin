@@ -1,4 +1,3 @@
-from src.state import *
 from src.components.Button import Button
 
 class CheckBox:

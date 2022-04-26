@@ -1,13 +1,13 @@
 import pygame as pg
 from src.config import *
-from src.state import *
+import src.state as state
 from src.components.Button import Button
 from src.components.Text import Text
 
 class PopUp:
     
     def __init__(self, title, background_path):
-        self._show = True
+        self._show = False
         self.__title = title
         self.__background = background_path
 
@@ -37,8 +37,8 @@ class PopUp:
 
     def open(self):
         self._show = True
-        SHOW_POPUP = True
+        state.SHOW_POPUP = True
 
     def close(self):
         self._show = False
-        SHOW_POPUP = False
+        state.SHOW_POPUP = False

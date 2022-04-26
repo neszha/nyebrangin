@@ -1,6 +1,6 @@
 import pygame
-from random import randrange
 from src.config import *
+from random import randrange
 
 class CarMenuAnimation:
 

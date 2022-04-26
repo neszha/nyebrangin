@@ -1,5 +1,6 @@
 import pygame, sys
 from src.config import *
+import src.state as state
 from random import randrange
 from src.components.Button import Button
 from src.components.CarMenuAnimation import CarMenuAnimation as Car
@@ -57,5 +58,6 @@ class Menu:
         self.__settings.render(self.__screen)
     
     def exit(self):
-        pygame.quit()
-        sys.exit()
+        if not state.SHOW_POPUP:
+            pygame.quit()
+            sys.exit()
