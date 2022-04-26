@@ -1,7 +1,7 @@
 from src.config import *
 from src.components.Text import Text
-from src.components.PopUp import PopUp
 from src.components.Checkbox import CheckBox
+from src.components.popups.PopUp import PopUp
 
 class Settings(PopUp):
 

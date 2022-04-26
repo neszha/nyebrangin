@@ -1,8 +1,8 @@
 from src.state import *
 from src.config import *
 from src.levels.Level import Level
-from src.components.PopUp import PopUp
 from src.components.Button import Button
+from src.components.popups.PopUp import PopUp
 
 class Data: pass
 
