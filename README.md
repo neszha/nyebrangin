@@ -16,7 +16,13 @@
 
 ## Deskripsi Game
 
+Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
 
+Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan. 
+
+Player mendapatkan poin saat menjalankan misi dengan durasi waktu tertentu. 
+
+Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat yang dapat dilihat dari kecepatan kendaraan mobil yang berjalan.
 
 ## Dependensi Paket (library) Game 
 
