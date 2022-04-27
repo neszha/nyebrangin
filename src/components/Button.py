@@ -13,11 +13,6 @@ class Button:
         self.__command_data = command_data
         self.__data = data
 
-    def render(self, screen):
-        self.__hover_detector()
-        self.__click_detector()
-        screen.blit(self.__btn, self.__btn_rect)
-
     def __hover_detector(self):
         mouse_pos = pg.mouse.get_pos()
         if self.__btn_rect.collidepoint(mouse_pos):
@@ -32,5 +27,10 @@ class Button:
             if self.__command1: self.__command1()
             if self.__command_data: self.__command_data(self.__data)
         if not pg.mouse.get_pressed()[0]: self.__clicked = False
+
+    def render(self, screen):
+        self.__hover_detector()
+        self.__click_detector()
+        screen.blit(self.__btn, self.__btn_rect)
         
 
