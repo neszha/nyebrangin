@@ -1,6 +1,6 @@
 import pygame
 from src.config import *
-import src.state as state 
+import src.state as state
 from src.Menu import Menu
 from src.Level import Level
 
@@ -14,15 +14,15 @@ class Main:
         pygame.display.set_caption(self.__game_name)
         self.clock = pygame.time.Clock()
 
-        # Daftar halaman game.
-        self.__menu = Menu()
-        # self.__level = Level()
-
     def __watch_page_change(self):
         if state.PAGE == 'menu':
+            if state.PAGE_FRAME == 0: 
+                self.__menu = Menu()
             self.__menu.render()
         elif state.PAGE == 'game-run':
-            print('game run')
+            if state.PAGE_FRAME == 0:
+                self.__level = Level()
+            self.__level.render()
 
     def run(self):
         while True:
@@ -37,3 +37,4 @@ class Main:
             self.__watch_page_change()
             pygame.display.update()
             self.clock.tick(FPS)
+            state.PAGE_FRAME += 1

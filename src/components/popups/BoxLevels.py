@@ -35,10 +35,9 @@ class BoxLevels(PopUp):
                 btn_pos_y += 140
 
     def __start_level(self, index_level):
-        state.PAGE = 'game-run'
         state.LEVEL_RUNNING = index_level
-        print(f'Start level {index_level}')
-
+        state.PAGE_FRAME = -1
+        state.PAGE = 'game-run'
 
     def render(self, screen):
         if self._show:

@@ -3,7 +3,7 @@ from src.config import *
 import src.state as state
 from random import randrange
 from src.components.Button import Button
-from src.components.popups.Levels import BoxLevels
+from src.components.popups.BoxLevels import BoxLevels
 from src.components.popups.Settings import Settings
 from src.components.CarMenuAnimation import CarMenuAnimation as Car
 from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
