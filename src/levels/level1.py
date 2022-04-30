@@ -1,6 +1,10 @@
 class Data: pass
 
-# Map.
+# Game
+game = Data()
+game.coutdown = 60
+
+# Map
 map = Data()
 map.image_path = 'assets/maps/MAP01.png'
 map.forbidden_area_color = (0, 0, 0, 150)
@@ -12,7 +16,16 @@ map.forbidden_area = [
     [(239, 51), (1041, 669)],
 ]
 
-# Player.
+# Palyer
 player = Data()
 player.positions = [100, 100]
 player.health = 3
+
+# Obstacles.
+obstacle = Data()
+
+# Cars.
+car = Data()
+
+# Civilians.
+civilian = Data()
