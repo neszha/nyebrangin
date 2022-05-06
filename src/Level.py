@@ -2,6 +2,7 @@ import pygame as pg
 from src.config import *
 import src.state as state
 from src.levels.list import levels
+from src.components.peoples.Player import Player
 
 class Data: pass
 class Level:
@@ -16,8 +17,8 @@ class Level:
     
     def __setup_level(self):
         self.__background.fill(pg.Color(255, 255, 255))
-        self.player = None
-        self.__level = levels[state.LEVEL_RUNNING-1]
+        self.__level = levels[state.LEVEL_RUNNING - 1]
+        self.player = Player('tony', [200, 300], 4)
 
     def __load_map(self):
         map = self.__level.map
@@ -27,8 +28,7 @@ class Level:
             area = Data()
             area.surface = pg.Surface(forbidden[0]).convert_alpha()
             area.location = forbidden[1]
-            if map.forbidden_area_color:
-                area.surface.fill(pg.Color(map.forbidden_area_color))
+            if map.forbidden_area_color: area.surface.fill(pg.Color(map.forbidden_area_color))
             self.__forbidden_area.append(area)
             
     def __load_obstacles(self):
@@ -49,5 +49,5 @@ class Level:
     def render(self):
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__map, (0, 0))
-        for forbidden in self.__forbidden_area:
-            self.__screen.blit(forbidden.surface, forbidden.location)
+        for forbidden in self.__forbidden_area: self.__screen.blit(forbidden.surface, forbidden.location)
+        self.player.render(self.__screen)
