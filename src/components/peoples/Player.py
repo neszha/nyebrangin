@@ -1,4 +1,4 @@
-import src.People as People
+import src.components.People as People
 
 class Player(People):
 
