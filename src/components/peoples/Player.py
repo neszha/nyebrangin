@@ -6,22 +6,25 @@ class Player(People):
     def __init__(self, name, positions, speed):
         super().__init__(name, positions)
         self.__speed = speed
-        self.direction = pg.math.Vector2()
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
         
         if keys[pg.K_UP]:
             self.direction.y = -1
+            self.direction_status = 'up'
         elif keys[pg.K_DOWN]:
             self.direction.y = 1
+            self.direction_status = 'down'
         else:
             self.direction.y = 0
             
         if keys[pg.K_RIGHT]:
             self.direction.x = 1
+            self.direction_status = 'right'
         elif keys[pg.K_LEFT]:
             self.direction.x = -1
+            self.direction_status = 'left'
         else:
             self.direction.x = 0
 
@@ -75,6 +78,7 @@ class Player(People):
 
     def render(self, screen):
         self.__input_controls()
+        self._animate()
         self.__move()
         screen.blit(self.shadow, self.shadow_rect)
-        screen.blit(self.characters['front'][1], self.positions)
+        screen.blit(self.character, self.positions)
