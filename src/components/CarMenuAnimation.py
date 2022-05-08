@@ -9,9 +9,9 @@ class CarMenuAnimation:
         self.speed = speed
         self.positions = [0, 566]
         self.patch_cars = [
-            'assets/cars/horizontal/baby.png',
-            'assets/cars/horizontal/sedan.png',
-            'assets/cars/horizontal/sport.png',
+            'assets/images/cars/horizontal/baby.png',
+            'assets/images/cars/horizontal/sedan.png',
+            'assets/images/cars/horizontal/sport.png',
         ]
         
         self.__load_components()

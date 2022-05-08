@@ -22,7 +22,7 @@ class People(pg.sprite.Sprite, ABC):
         
         for direction in ['up', 'down', 'left']:
             for i in range(30):
-                character = pg.image.load(f'assets/peoples/{name}/{direction}/{i}.png').convert_alpha()
+                character = pg.image.load(f'assets/images/peoples/{name}/{direction}/{i}.png').convert_alpha()
                 self.characters[direction].append(character)
 
         for character in self.characters['left']:

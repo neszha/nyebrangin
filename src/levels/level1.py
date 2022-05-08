@@ -6,8 +6,8 @@ game.coutdown = 60 # Seconds.
 
 # Map.
 map = Data()
-map.image_path = 'assets/maps/MAP01.png'
-map.forbidden_area_color = (255, 0, 0, 100)
+map.image_path = 'assets/maps/MAP01.png' # Location of game map.
+map.forbidden_area_color = (255, 0, 0, 0) # (R, G, B, A).
 map.forbidden_area = [ 
     # [(size), (location)],
     [(1280, 243), (0, 0)],
@@ -24,10 +24,10 @@ obstacle.list = [
 
 # Cars.
 car = Data()
-car.use = [
-    'assets/cars/vertical/1.png',
-    'assets/cars/vertical/2.png',
-    'assets/cars/vertical/3.png',
+car.use = [ 
+    'assets/images/cars/vertical/1.png',
+    'assets/images/cars/vertical/2.png',
+    'assets/images/cars/vertical/3.png',
 ]
 car.traffic_density = [1, 3]
 car.speed_range = [10, 100]

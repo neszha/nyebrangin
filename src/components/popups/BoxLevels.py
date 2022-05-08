@@ -8,16 +8,16 @@ class Data: pass
 class BoxLevels(PopUp):
 
     def __init__(self):
-        super().__init__('Levels', 'assets/backgrounds/levels.png')
+        super().__init__('Levels', 'assets/images/backgrounds/levels.png')
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
 
         # Mengambil lokasi gambar.
-        path_level_lock = 'assets/buttons/levels/lock.png'
+        path_level_lock = 'assets/images/buttons/levels/lock.png'
         path_levels = []
-        for i in range(8): path_levels.append(f'assets/buttons/levels/{i+1}.png')
+        for i in range(8): path_levels.append(f'assets/images/buttons/levels/{i+1}.png')
 
         # Inisialisasi tombol level.
         self.__btn_levels = []

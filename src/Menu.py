@@ -20,8 +20,8 @@ class Menu:
         self.__background.fill(pygame.Color(175, 208, 233))
 
         # Menyiapkan komponen gambar.
-        self.__grass = pygame.image.load('assets/grasses/menu-grass.png').convert()
-        self.__road = pygame.image.load('assets/roads/menu-road.png').convert()
+        self.__grass = pygame.image.load('assets/images/menu-grass.png').convert()
+        self.__road = pygame.image.load('assets/images/menu-road.png').convert()
         self.__text_logo = pygame.image.load('assets/images/text-logo.png').convert_alpha()
         self.__arrow_direction = pygame.image.load('assets/images/arrow-direction.png').convert_alpha()
         self.__cars = []
@@ -42,9 +42,9 @@ class Menu:
 
         # Load komponen tombol.
         self.__buttons = [
-            Button('assets/buttons/setting.png', [40, 40], self.__settings.open),
-            Button('assets/buttons/start.png', [WIDTH/2, 280], self.__levels.open),
-            Button('assets/buttons/exit.png', [WIDTH/2, 380], self.exit),
+            Button('assets/images/buttons/setting.png', [40, 40], self.__settings.open),
+            Button('assets/images/buttons/start.png', [WIDTH/2, 280], self.__levels.open),
+            Button('assets/images/buttons/exit.png', [WIDTH/2, 380], self.exit),
         ]
 
     def render(self):

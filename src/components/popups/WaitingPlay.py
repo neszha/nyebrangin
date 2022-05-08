@@ -12,7 +12,7 @@ class WaitingPlay(PopUp):
         self.__texts = []
         
         level = f'Level {state.LEVEL_RUNNING}'
-        bg = 'assets/backgrounds/settings.png'
+        bg = 'assets/images/backgrounds/settings.png'
         super().__init__(level, bg, False)
         self.__load_local_componenets()
 

@@ -10,8 +10,8 @@ class CheckBox:
 
     def __load_componenets(self):
         # Lokasi gambar.
-        path_checked = 'assets/buttons/checkbox-checked.png'
-        path_unchecked = 'assets/buttons/checkbox-unchecked.png'
+        path_checked = 'assets/images/buttons/checkbox-checked.png'
+        path_unchecked = 'assets/images/buttons/checkbox-unchecked.png'
 
         # Membuat tombol checkbox.
         self.btn_checked = Button(path_checked, self.__positions, self.__checked_toggle, self.__command)

@@ -6,7 +6,7 @@ from src.components.Checkbox import CheckBox
 class Settings(PopUp):
 
     def __init__(self):
-        super().__init__('Settings', 'assets/backgrounds/settings.png')
+        super().__init__('Settings', 'assets/images/backgrounds/settings.png')
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
