@@ -5,6 +5,7 @@ from src.levels.list import levels
 from src.components.Car import Car
 from random import randrange, choice
 from src.components.peoples.Player import Player
+from src.components.GameHeader import GameHeader
 from src.components.popups.WaitingPlay import WaitingPlay
 from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
@@ -16,6 +17,7 @@ class Level:
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
         self.__waiting_play = WaitingPlay(start_command=self.__start)
+        self.__header = GameHeader()
         self.__obstacles = pg.sprite.Group()
         self.__cars = pg.sprite.Group()
 
@@ -23,13 +25,7 @@ class Level:
         self.__load_map()
         self.__load_obstacles()
         self.__load_cars(begin=True)
-
-        player = self.__level.player
-        self.__player = Player(
-            player.name, player.position, player.speed, 
-            self.__obstacles, self.__cars
-        )
-        self.__player.update()
+        self.__load_player()
     
     def __setup_level(self):
         self.__background.fill(pg.Color(255, 255, 255))
@@ -63,6 +59,14 @@ class Level:
             self.__cars.add(Car(path, position, direction, speed))
         if len(self.__cars) < min_car: self.__load_cars()
     
+    def __load_player(self):
+        player = self.__level.player
+        self.__player = Player(
+            player.name, player.health, player.position, player.speed, 
+            self.__obstacles, self.__cars, self.__header
+        )
+        self.__player.update()
+
     def __load_civilians(self):
         pass
     
@@ -84,6 +88,7 @@ class Level:
         self.__obstacles.draw(self.__screen)
         self.__cars.draw(self.__screen)
         self.__player.render(self.__screen)
+        self.__header.render(self.__screen)
         
         if self.__status == 'running':
             self.__load_cars()

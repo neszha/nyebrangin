@@ -3,24 +3,26 @@ from src.components.People import People
 
 class Player(People):
 
-    def __init__(self, name, positions, speed, obstacles, cars):
+    def __init__(self, name, health, positions, speed, obstacles, cars, header):
         super().__init__(name, positions)
+        self.__health = health
         self.__speed = speed
         self.__obstacles = obstacles
         self.__cars = cars
-        self.enc = 0
+        self.__car_id = 0
+        self.__header = header
+        
+        self.__header.health = self.__health
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
-        
         if keys[pg.K_UP]:
             self.direction.y = -1
             self.direction_status = 'up'
         elif keys[pg.K_DOWN]:
             self.direction.y = 1
             self.direction_status = 'down'
-        else:
-            self.direction.y = 0
+        else: self.direction.y = 0
             
         if keys[pg.K_RIGHT]:
             self.direction.x = 1
@@ -28,8 +30,7 @@ class Player(People):
         elif keys[pg.K_LEFT]:
             self.direction.x = -1
             self.direction_status = 'left'
-        else:
-            self.direction.x = 0
+        else: self.direction.x = 0
 
     def __move(self):
         if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
@@ -41,20 +42,27 @@ class Player(People):
         self.__collision_cars()
 
     def __collision_obstacles(self, direction):
-        for sprite in self.__obstacles:
-            if sprite.rect.colliderect(self.shadow_rect):
+        for obstacle in self.__obstacles:
+            if obstacle.rect.colliderect(self.shadow_rect):
                 if direction == 'x':
-                    if self.direction.x > 0: self.shadow_rect.right = sprite.rect.left
-                    if self.direction.x < 0: self.shadow_rect.left = sprite.rect.right
+                    if self.direction.x > 0: self.shadow_rect.right = obstacle.rect.left
+                    if self.direction.x < 0: self.shadow_rect.left = obstacle.rect.right
                 if direction == 'y':
-                    if self.direction.y > 0: self.shadow_rect.bottom = sprite.rect.top
-                    if self.direction.y < 0: self.shadow_rect.top = sprite.rect.bottom
+                    if self.direction.y > 0: self.shadow_rect.bottom = obstacle.rect.top
+                    if self.direction.y < 0: self.shadow_rect.top = obstacle.rect.bottom
 
     def __collision_cars(self):
-        for sprite in self.__cars:
-            if sprite.rect.colliderect(self.shadow_rect):
-                print(f'ditubruk mobil {self.enc}')
-                self.enc += 1
+        for car in self.__cars:
+            if car.rect.colliderect(self.shadow_rect):
+                if self.__car_id != id(car):
+                    print(f'Ditabrak mobil {self.__car_id}')
+                    self.__reduce_health()
+                    self.__car_id = id(car)
+
+    def __reduce_health(self):
+        self.__health -= 1
+        self.__header.health = self.__health
+        if(self.__health < 1): print('GAME OVER', self.__health)
 
     def bring_civilian(self):
         pass

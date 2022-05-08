@@ -30,7 +30,7 @@ car.use = [
     'assets/images/cars/vertical/3.png',
 ]
 car.traffic_density = [1, 3]
-car.speed_range = [10, 100]
+car.speed_range = [10, 40]
 car.direction = {
     # 'direction': [random range position y]
     'left': [350, 420],
@@ -45,4 +45,4 @@ player = Data()
 player.name = 'tony'
 player.position = [200, 290]
 player.health = 3
-player.speed = 4
+player.speed = 8
