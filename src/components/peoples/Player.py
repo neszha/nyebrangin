@@ -62,9 +62,11 @@ class Player(People):
     def free_civilian(self):
         pass
 
-    def render(self, screen):
+    def update(self):
         self.__input_controls()
         self._animate()
         self.__move()
+
+    def render(self, screen):
         screen.blit(self.shadow, self.shadow_rect)
         screen.blit(self.character, self.positions)

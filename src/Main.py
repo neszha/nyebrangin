@@ -1,6 +1,6 @@
 import pygame
-from src.config import *
 import src.state as state
+from src.config import *
 from src.Menu import Menu
 from src.Level import Level
 

@@ -1,7 +1,7 @@
 from src.config import *
 import src.state as state
+from src.components.PopUp import PopUp
 from src.components.Button import Button
-from src.components.popups.PopUp import PopUp
 
 class Data: pass
 
