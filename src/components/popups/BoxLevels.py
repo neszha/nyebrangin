@@ -4,7 +4,6 @@ from src.components.PopUp import PopUp
 from src.components.Button import Button
 
 class Data: pass
-
 class BoxLevels(PopUp):
 
     def __init__(self):

@@ -8,6 +8,8 @@ class Main:
 
     def __init__(self, game_name):
         self.__game_name = game_name
+        self.__menu = None
+        self.__level = None
 
         # Menyiapkan game.
         pygame.init()
@@ -16,12 +18,14 @@ class Main:
 
     def __watch_page_change(self):
         if state.PAGE == 'menu':
-            if state.PAGE_FRAME == 0: 
+            if not self.__menu: 
                 self.__menu = Menu()
+                self.__level = None
             self.__menu.render()
         elif state.PAGE == 'game-run':
-            if state.PAGE_FRAME == 0:
+            if not self.__level: 
                 self.__level = Level()
+                self.__menu = None
             self.__level.render()
 
     def run(self):
@@ -37,4 +41,3 @@ class Main:
             self.__watch_page_change()
             pygame.display.update()
             self.clock.tick(FPS)
-            state.PAGE_FRAME += 1

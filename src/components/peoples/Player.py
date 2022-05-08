@@ -11,7 +11,7 @@ class Player(People):
         self.__cars = cars
         self.__car_id = 0
         self.__header = header
-        
+
         self.__header.health = self.__health
 
     def __input_controls(self):
@@ -55,7 +55,7 @@ class Player(People):
         for car in self.__cars:
             if car.rect.colliderect(self.shadow_rect):
                 if self.__car_id != id(car):
-                    print(f'Ditabrak mobil {self.__car_id}')
+                    print(f'Player ditabrak mobil {id(car)}')
                     self.__reduce_health()
                     self.__car_id = id(car)
 

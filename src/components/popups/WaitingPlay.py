@@ -3,6 +3,7 @@ import src.state as state
 from src.config import *
 from src.components.Text import Text
 from src.components.PopUp import PopUp
+from src.components.Button import Button
 
 class Data: pass
 class WaitingPlay(PopUp):
@@ -18,12 +19,10 @@ class WaitingPlay(PopUp):
 
     def __load_local_componenets(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
-        
-        # Load test.
         text_pos_x = (WIDTH/2)
-        text_pos_y = (HEIGTH/2) - (bg_size_y/2) + 150
-        self.__texts.append(Text('Press Enter to Play', [text_pos_x, text_pos_y], 36))
-        self.__texts.append(Text('Game.', [text_pos_x, text_pos_y + 50], 36))
+        text_pos_y = (HEIGTH/2) - (bg_size_y/2) + 140
+        self.__texts.append(Text('Press Enter to Play Game.', [text_pos_x, text_pos_y], 36))
+        self.__btn = Button('assets/images/buttons/to-home.png', [text_pos_x, text_pos_y + 100], command0=self.__back_to_menu)
 
     def __input_keys(self):
         keys = pg.key.get_pressed()
@@ -31,8 +30,13 @@ class WaitingPlay(PopUp):
             self.__start_command()
             self.close()
 
+    def __back_to_menu(self):
+        state.PAGE = 'menu'
+        self.close()
+
     def render(self, screen):
         if self._show:
             self.__input_keys()
             self.render_popup(screen)
             for text in self.__texts: text.render(screen)
+            self.__btn.render(screen)

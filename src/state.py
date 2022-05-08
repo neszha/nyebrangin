@@ -1,7 +1,6 @@
 ## Navigasi menu.
-# PAGE = 'menu' # menu|geme-run
-PAGE = 'game-run' # menu|geme-run
-PAGE_FRAME = 0
+PAGE = 'menu' # menu|geme-run
+# PAGE = 'game-run'
 
 ## Status menampilkan fitur popup.
 SHOW_POPUP = False
