@@ -69,10 +69,16 @@ class Level:
     def __start(self):
         self.__status = 'running'
 
-    def pause(self):
+    def __pause(self):
         self.__status = 'pause'
+        self.__waiting_play.open()
+
+    def __input_keys(self):
+        keys = pg.key.get_pressed()
+        if keys[pg.K_ESCAPE]: self.__pause()
 
     def render(self):
+        self.__input_keys()
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__map, (0, 0))
         self.__obstacles.draw(self.__screen)
@@ -85,5 +91,3 @@ class Level:
             self.__player.update()
         else:    
             self.__waiting_play.render(self.__screen)
-
-        print(state.SHOW_POPUP)
