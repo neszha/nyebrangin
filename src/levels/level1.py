@@ -16,13 +16,13 @@ map.forbidden_area = [
     [(239, 51), (1041, 669)],
 ]
 
+# Obstacles.
+obstacle = Data()
+
 # Palyer
 player = Data()
 player.positions = [100, 100]
 player.health = 3
-
-# Obstacles.
-obstacle = Data()
 
 # Cars.
 car = Data()

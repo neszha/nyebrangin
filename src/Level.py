@@ -3,33 +3,31 @@ from src.config import *
 import src.state as state
 from src.levels.list import levels
 from src.components.peoples.Player import Player
+from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
-class Data: pass
 class Level:
     
     def __init__(self):
         self.__status = 'running'
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
+        self.__obstacles = pg.sprite.Group()
 
         self.__setup_level()
         self.__load_map()
+
+        self.__player = Player('tony', [200, 300], 4, self.__obstacles)
     
     def __setup_level(self):
         self.__background.fill(pg.Color(255, 255, 255))
         self.__level = levels[state.LEVEL_RUNNING - 1]
-        self.player = Player('tony', [200, 300], 4)
 
     def __load_map(self):
         map = self.__level.map
         self.__map = pg.image.load(map.image_path).convert()
-        self.__forbidden_area = []
-        for forbidden in map.forbidden_area:
-            area = Data()
-            area.surface = pg.Surface(forbidden[0]).convert_alpha()
-            area.location = forbidden[1]
-            if map.forbidden_area_color: area.surface.fill(pg.Color(map.forbidden_area_color))
-            self.__forbidden_area.append(area)
+        for [size, location] in map.forbidden_area:
+            forbidden_area = ForbiddenArea(size, location, map.forbidden_area_color)
+            self.__obstacles.add(forbidden_area)
             
     def __load_obstacles(self):
         pass
@@ -49,5 +47,5 @@ class Level:
     def render(self):
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__map, (0, 0))
-        for forbidden in self.__forbidden_area: self.__screen.blit(forbidden.surface, forbidden.location)
-        self.player.render(self.__screen)
+        self.__obstacles.draw(self.__screen)
+        self.__player.render(self.__screen)

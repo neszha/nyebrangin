@@ -16,7 +16,7 @@ class People(pg.sprite.Sprite, ABC):
 
     def __load_characters(self, name):
         self.shadow = pg.Surface([25, 10]).convert_alpha()
-        self.shadow.fill(pg.Color(0, 0, 0, 20))
+        self.shadow.fill(pg.Color(0, 0, 0, 25))
         self.shadow_rect = self.shadow.get_rect(midbottom=self.positions)
         self.characters = { 'up': [], 'down': [], 'left': [], 'right': [] }
         

@@ -3,9 +3,10 @@ from src.components.People import People
 
 class Player(People):
 
-    def __init__(self, name, positions, speed):
+    def __init__(self, name, positions, speed, obstacles):
         super().__init__(name, positions)
         self.__speed = speed
+        self.__obstacles = obstacles
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
@@ -29,46 +30,22 @@ class Player(People):
             self.direction.x = 0
 
     def __move(self):
-        if self.direction.magnitude() != 0:
-            self.direction = self.direction.normalize()
-
+        if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
         self.shadow_rect.x += self.direction.x * self.__speed
-        # self.collision('horizontal')
+        self.__collision_obstacles('x')
         self.shadow_rect.y += self.direction.y * self.__speed
-        # self.collision('vertical')
+        self.__collision_obstacles('y')
         self.positions = [self.shadow_rect.x - 17, self.shadow_rect.y - 50]
 
-    # def collision(self, direction):
-    #     if direction == 'horizontal':
-	# 		for sprite in self.obstacle_sprites:
-	# 			if sprite.rect.colliderect(self.rect):
-	# 				if self.direction.x > 0: # moving right
-	# 					self.rect.right = sprite.rect.left
-	# 				if self.direction.x < 0: # moving left
-	# 					self.rect.left = sprite.rect.right
-
-	# 	if direction == 'vertical':
-	# 		for sprite in self.obstacle_sprites:
-	# 			if sprite.rect.colliderect(self.rect):
-	# 				if self.direction.y > 0: # moving down
-	# 					self.rect.bottom = sprite.rect.top
-	# 				if self.direction.y < 0: # moving up
-	# 					self.rect.top = sprite.rect.bottom
-
-    def __right(self):
-        pass
-
-    def __left(self):
-        pass
-
-    def __up(self):
-        pass
-
-    def __down(self):
-        pass
-
-    def __right(self):
-        pass
+    def __collision_obstacles(self, direction):
+        for sprite in self.__obstacles:
+            if sprite.rect.colliderect(self.shadow_rect):
+                if direction == 'x':
+                    if self.direction.x > 0: self.shadow_rect.right = sprite.rect.left
+                    if self.direction.x < 0: self.shadow_rect.left = sprite.rect.right
+                if direction == 'y':
+                    if self.direction.y > 0: self.shadow_rect.bottom = sprite.rect.top
+                    if self.direction.y < 0: self.shadow_rect.top = sprite.rect.bottom
 
     def bring_civilian(self):
         pass
