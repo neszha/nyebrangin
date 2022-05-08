@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 from src.config import *
 from random import randrange
 
@@ -19,9 +19,9 @@ class CarMenuAnimation:
     def __load_components(self):
         # Mengacak jenis mobil.
         use_car = self.patch_cars[randrange(0, len(self.patch_cars))]
-        self.car = pygame.image.load(use_car).convert_alpha()
+        self.car = pg.image.load(use_car).convert_alpha()
         if self.direction == 'to-left':
-            self.car = pygame.transform.flip(self.car, True, False)
+            self.car = pg.transform.flip(self.car, True, False)
             self.positions[1] -= 12
 
         # Mengacak poisis x mobil.

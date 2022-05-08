@@ -1,4 +1,4 @@
-import src.Obstacle as Obstacle
+from src.components.Obstacle import Obstacle
 
 class Hole(Obstacle):
     

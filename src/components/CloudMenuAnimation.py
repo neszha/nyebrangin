@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 from src.config import *
 from random import randrange, uniform
 
@@ -22,11 +22,11 @@ class CloudMenuAnimation:
         self.positions = [randrange(25, WIDTH-25), randrange(50, 450)]
         
         # Menyiapkan awan.
-        self.cloud = pygame.image.load(self.image_patch).convert_alpha()
+        self.cloud = pg.image.load(self.image_patch).convert_alpha()
         [size_x, size_y] = self.cloud.get_size()
-        self.cloud = pygame.transform.scale(self.cloud, (size_x * self.scale, size_y * self.scale))
+        self.cloud = pg.transform.scale(self.cloud, (size_x * self.scale, size_y * self.scale))
         if self.direction == 'to-left':
-            self.cloud = pygame.transform.flip(self.cloud, True, False)
+            self.cloud = pg.transform.flip(self.cloud, True, False)
         
     def render(self, screen):
         # Update lokasi awan berdasarkan arah gerak.

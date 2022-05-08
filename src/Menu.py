@@ -1,4 +1,5 @@
-import pygame, sys
+import sys
+import pygame as pg
 import src.state as state
 from src.config import *
 from random import randrange
@@ -11,19 +12,19 @@ from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
 class Menu:
     
     def __init__(self):
-        self.__screen = pygame.display.set_mode((WIDTH, HEIGTH))
+        self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__load_components()
 
     def __load_components(self):
         # Membuat background.
-        self.__background = pygame.Surface((WIDTH, HEIGTH))
-        self.__background.fill(pygame.Color(175, 208, 233))
+        self.__background = pg.Surface((WIDTH, HEIGTH))
+        self.__background.fill(pg.Color(175, 208, 233))
 
         # Menyiapkan komponen gambar.
-        self.__grass = pygame.image.load('assets/images/menu-grass.png').convert()
-        self.__road = pygame.image.load('assets/images/menu-road.png').convert()
-        self.__text_logo = pygame.image.load('assets/images/text-logo.png').convert_alpha()
-        self.__arrow_direction = pygame.image.load('assets/images/arrow-direction.png').convert_alpha()
+        self.__grass = pg.image.load('assets/images/menu-grass.png').convert()
+        self.__road = pg.image.load('assets/images/menu-road.png').convert()
+        self.__text_logo = pg.image.load('assets/images/text-logo.png').convert_alpha()
+        self.__arrow_direction = pg.image.load('assets/images/arrow-direction.png').convert_alpha()
         self.__cars = []
         self.__clouds = []
         for i in range(4): self.__cars.append(Car('to-left', randrange(2, 6)))            
@@ -61,5 +62,5 @@ class Menu:
     
     def exit(self):
         if not state.SHOW_POPUP:
-            pygame.quit()
+            pg.quit()
             sys.exit()

@@ -1,4 +1,4 @@
-import pygame
+import pygame as pg
 import src.state as state
 from src.config import *
 from src.Menu import Menu
@@ -12,9 +12,9 @@ class Main:
         self.__level = None
 
         # Menyiapkan game.
-        pygame.init()
-        pygame.display.set_caption(self.__game_name)
-        self.clock = pygame.time.Clock()
+        pg.init()
+        pg.display.set_caption(self.__game_name)
+        self.clock = pg.time.Clock()
 
     def __watch_page_change(self):
         if state.PAGE == 'menu':
@@ -31,13 +31,13 @@ class Main:
     def run(self):
         while True:
             # Mengawasi event exit.
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
+            for event in pg.event.get():
+                if event.type == pg.QUIT:
                     self.menu.exit()
-                if event.type == pygame.MOUSEMOTION:
-                    print(pygame.mouse.get_pos())
+                if event.type == pg.MOUSEMOTION:
+                    print(pg.mouse.get_pos())
             
             # Update tampilan game.
             self.__watch_page_change()
-            pygame.display.update()
+            pg.display.update()
             self.clock.tick(FPS)
