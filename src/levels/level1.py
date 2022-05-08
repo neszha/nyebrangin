@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60
+game.coutdown = 60 # Seconds.
 
 # Map.
 map = Data()
@@ -42,5 +42,7 @@ civilian = Data()
 
 # Palyer
 player = Data()
-player.positions = [100, 100]
+player.name = 'tony'
+player.position = [200, 290]
 player.health = 3
+player.speed = 4

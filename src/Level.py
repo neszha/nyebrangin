@@ -11,7 +11,7 @@ from src.components.obstacles.ForbiddenArea import ForbiddenArea
 class Level:
     
     def __init__(self):
-        self.__status = 'waiting'
+        self.__status = 'running'
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
         self.__obstacles = pg.sprite.Group()
@@ -20,9 +20,12 @@ class Level:
         self.__setup_level()
         self.__load_map()
         self.__load_obstacles()
-        self.__load_cars(True)
+        self.__load_cars(begin=True)
 
-        self.__player = Player('tony', [200, 300], 4, self.__obstacles, self.__cars)
+        player = self.__level.player
+        self.__player = Player(
+            player.name, player.position, player.speed, self.__obstacles, self.__cars
+        )
     
     def __setup_level(self):
         self.__background.fill(pg.Color(255, 255, 255))
