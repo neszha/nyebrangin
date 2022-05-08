@@ -3,10 +3,12 @@ from src.components.People import People
 
 class Player(People):
 
-    def __init__(self, name, positions, speed, obstacles):
+    def __init__(self, name, positions, speed, obstacles, cars):
         super().__init__(name, positions)
         self.__speed = speed
         self.__obstacles = obstacles
+        self.__cars = cars
+        self.enc = 0
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
@@ -36,6 +38,7 @@ class Player(People):
         self.shadow_rect.y += self.direction.y * self.__speed
         self.__collision_obstacles('y')
         self.positions = [self.shadow_rect.x - 17, self.shadow_rect.y - 50]
+        self.__collision_cars()
 
     def __collision_obstacles(self, direction):
         for sprite in self.__obstacles:
@@ -46,6 +49,12 @@ class Player(People):
                 if direction == 'y':
                     if self.direction.y > 0: self.shadow_rect.bottom = sprite.rect.top
                     if self.direction.y < 0: self.shadow_rect.top = sprite.rect.bottom
+
+    def __collision_cars(self):
+        for sprite in self.__cars:
+            if sprite.rect.colliderect(self.shadow_rect):
+                print(f'ditubruk mobil {self.enc}')
+                self.enc += 1
 
     def bring_civilian(self):
         pass
