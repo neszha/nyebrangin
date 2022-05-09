@@ -5,7 +5,7 @@ class Button:
     def __init__(self, path, positions, command0=False, command1=False, command_data=False, data=None):
         self.__positions = positions
         self.__btn = pg.image.load(path).convert_alpha()
-        self.__btn_rect = self.__btn.get_rect(center = self.__positions)
+        self.__btn_rect = self.__btn.get_rect(center=self.__positions)
         self.__hovered = False
         self.__clicked = False
         self.__command0 = command0
@@ -15,12 +15,13 @@ class Button:
 
     def __hover_detector(self):
         mouse_pos = pg.mouse.get_pos()
-        if self.__btn_rect.collidepoint(mouse_pos):
-            self.__hovered = True
-        else:
-            self.__hovered = False
+        if self.__btn_rect.collidepoint(mouse_pos): self.__hovered = True
+        else: self.__hovered = False
 
     def __click_detector(self):
+        # for event in pg.event.get():
+        #     if event.type == pg.MOUSEBUTTONDOWN:
+        #         print("click", pg.mouse.get_pos())
         if self.__hovered and pg.mouse.get_pressed()[0] and not self.__clicked:
             self.__clicked = True
             if self.__command0: self.__command0()

@@ -3,8 +3,8 @@ from src.components.People import People
 
 class Player(People):
 
-    def __init__(self, name, health, positions, speed, obstacles, cars, header):
-        super().__init__(name, positions)
+    def __init__(self, name, health, position, speed, obstacles, cars, header):
+        super().__init__(name, position)
         self.__health = health
         self.__speed = speed
         self.__obstacles = obstacles
@@ -38,7 +38,7 @@ class Player(People):
         self.__collision_obstacles('x')
         self.shadow_rect.y += self.direction.y * self.__speed
         self.__collision_obstacles('y')
-        self.positions = [self.shadow_rect.x - 17, self.shadow_rect.y - 50]
+        self.position = [self.shadow_rect.x - 17, self.shadow_rect.y - 50]
         self.__collision_cars()
 
     def __collision_obstacles(self, direction):
@@ -77,4 +77,4 @@ class Player(People):
 
     def render(self, screen):
         screen.blit(self.shadow, self.shadow_rect)
-        screen.blit(self.character, self.positions)
+        screen.blit(self.character, self.position)

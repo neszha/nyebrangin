@@ -6,14 +6,14 @@ PAGE = 'menu' # menu|geme-run
 SHOW_POPUP = False
 
 ## Pengaturan.
-MUSIC = True
-SOUND_FX = True
+MUSIC = False
+SOUND_FX = False
 
 ## Level berjalan.
 LEVEL_RUNNING = 1
 
 ## Checkpoint.
-CURRENT_LEVEL = 3
+CURRENT_LEVEL = 5
 # LEVELS = [
 #     {
 #         'score': 0,
