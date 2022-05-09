@@ -26,7 +26,7 @@ obstacle.list = [
 car = Data()
 car.use = [ 
     'assets/images/cars/vertical/1.png',
-    # 'assets/images/cars/vertical/2.png',
+    'assets/images/cars/vertical/2.png',
     # 'assets/images/cars/vertical/3.png',
 ]
 car.traffic_density = [1, 3]

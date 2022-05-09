@@ -13,7 +13,7 @@ SOUND_FX = True
 LEVEL_RUNNING = 1
 
 ## Checkpoint.
-CURRENT_LEVEL = 1
+CURRENT_LEVEL = 3
 # LEVELS = [
 #     {
 #         'score': 0,
