@@ -1,3 +1,4 @@
+import src.state as state
 from src.config import *
 from src.components.Text import Text
 from src.components.PopUp import PopUp
@@ -23,12 +24,16 @@ class Settings(PopUp):
         check_pos_y = txt_pos_y
         self.check_music = CheckBox([check_pos_x, check_pos_y], self.__check_music_handdler)
         self.check_sound_fx = CheckBox([check_pos_x, check_pos_y + 80], self.__check_sound_fx_handdler)
+        
+        # Load default settings.
+        self.check_music.checked = state.MUSIC
+        self.check_sound_fx.checked = state.SOUND_FX
 
     def __check_music_handdler(self):
-        print('check music', self.check_music.checked)
+        state.MUSIC = self.check_music.checked
 
     def __check_sound_fx_handdler(self):
-        print('check sound fx', self.check_sound_fx.checked)
+        state.SOUND_FX = self.check_sound_fx.checked
 
     def render(self, screen):
         if self._show:

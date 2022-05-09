@@ -3,6 +3,7 @@ import pygame as pg
 import src.state as state
 from src.config import *
 from random import randrange
+from src.components.Audio import Audio
 from src.components.Button import Button
 from src.components.popups.Settings import Settings
 from src.components.popups.BoxLevels import BoxLevels
@@ -16,6 +17,10 @@ class Menu:
         self.__load_components()
 
     def __load_components(self):
+        # Load basksong menu.
+        self.backsong = Audio('assets/audios/backsongs/bs-menu.mp3', 'music')
+        self.backsong.play(loops=-1)
+
         # Membuat background.
         self.__background = pg.Surface((WIDTH, HEIGTH))
         self.__background.fill(pg.Color(175, 208, 233))
@@ -49,6 +54,7 @@ class Menu:
         ]
 
     def render(self):
+        self.backsong.watch_setting()
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__grass, self.__grass_rect)
         self.__screen.blit(self.__road, self.__road_rect)

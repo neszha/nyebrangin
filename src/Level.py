@@ -4,6 +4,7 @@ from src.config import *
 from src.levels.list import levels
 from src.components.Car import Car
 from random import randrange, choice
+from src.components.Audio import Audio
 from src.components.peoples.Player import Player
 from src.components.GameHeader import GameHeader
 from src.components.popups.WaitingPlay import WaitingPlay
@@ -28,6 +29,9 @@ class Level:
         self.__load_player()
     
     def __setup_level(self):
+        self.backsong = Audio('assets/audios/backsongs/bs-play0.mp3', 'music')
+        self.backsong.play(loops=-1)
+
         self.__background.fill(pg.Color(255, 255, 255))
         self.__level = levels[state.LEVEL_RUNNING - 1]
         state.SHOW_POPUP = False
@@ -82,6 +86,7 @@ class Level:
         if keys[pg.K_ESCAPE]: self.__pause()
 
     def render(self):
+        self.backsong.watch_setting()
         self.__input_keys()
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__map, (0, 0))

@@ -20,12 +20,16 @@ class Main:
         if state.PAGE == 'menu':
             if not self.__menu: 
                 self.__menu = Menu()
-                self.__level = None
+                if self.__level:
+                    self.__level.backsong.stop()
+                    self.__level = None
             self.__menu.render()
         elif state.PAGE == 'game-run':
             if not self.__level: 
                 self.__level = Level()
-                self.__menu = None
+                if self.__menu:
+                    self.__menu.backsong.stop()
+                    self.__menu = None
             self.__level.render()
 
     def run(self):
