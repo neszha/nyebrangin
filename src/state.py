@@ -6,8 +6,8 @@ PAGE = 'menu' # menu|geme-run|loading-screen
 SHOW_POPUP = False
 
 ## Pengaturan.
-MUSIC = False
-SOUND_FX = False
+MUSIC = True
+SOUND_FX = True
 
 ## Level berjalan.
 LEVEL_RUNNING = 1

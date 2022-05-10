@@ -9,43 +9,43 @@ from src.components.Button import Button
 class Data: pass
 class Finish(PopUp):
 
-    def __init__(self, time_left='00:00', trophy_number=2):
-        self.__texts = []
-        self.__btns = []
-        self.__time_left = time_left
-        self.__trophy_number = str(trophy_number)
+    def __init__(self):
+        self.__time_left = '00:00'
+        self.__trophy_number = 1
         super().__init__('FINISH!', 'assets/images/backgrounds/end.png', False)
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
-        [bg_size_x, bg_size_y] = self.background.get_size()  
-        self.__texts.append(
+        [bg_size_x, bg_size_y] = self.background.get_size()
+        self.__texts = [
             Text(
                 'Time Left', 
                 [(WIDTH/2) - (bg_size_x/4), (HEIGTH/2) - 70],
                 36
-            )
-        )
-        self.__texts.append(
+            ),
             Text(
                 self.__time_left, 
                 [(WIDTH/2) + (bg_size_x/4), (HEIGTH/2) - 70],
                 36
             )
-        )
-        self.__btns.append(
+        ]
+        self.__btns = [
             Button(
                 f'assets/images/trophy{self.__trophy_number}.png',
                 [(WIDTH/2), (HEIGTH/2) + 40],
-            )
-        )
-        self.__btns.append(
+            ),
             Button(
                 'assets/images/buttons/next-level.png', 
                 [(WIDTH/2), (HEIGTH/2) + (bg_size_y/2) - 60],
                 command0=self.__next_level
             )
-        )
+        ]
+    
+    def set_item(self, time_left, trophy_number):
+        self.__time_left = time_left
+        self.__trophy_number = trophy_number
+        self.__load_local_componenets()
+        print(self.__time_left)
 
     def __next_level(self): 
         state.PAGE = 'menu'

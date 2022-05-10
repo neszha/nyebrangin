@@ -8,8 +8,7 @@ from src.components.Button import Button
 class Data: pass
 class GameOver(PopUp):
 
-    def __init__(self, start_command):
-        self.__start_command = start_command
+    def __init__(self):
         self.__texts = []
         self.__btns = []
         super().__init__('FINISH!', 'assets/images/backgrounds/end.png', False)

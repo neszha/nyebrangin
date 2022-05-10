@@ -6,7 +6,7 @@ class Player(People):
 
     def __init__(self, name, health, position, speed, header, obstacles, cars, civilians):
         super().__init__(name, position)
-        self.__health = health
+        self.health = health
         self.__speed = speed
         self.__header = header
         self.__obstacles = obstacles
@@ -16,7 +16,7 @@ class Player(People):
         self.__key_pressed = { 'space': time() }
         self.__temp = {'speed': speed}
 
-        self.__header.health = self.__health
+        self.__header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
 
     def __input_controls(self):
@@ -94,9 +94,8 @@ class Player(People):
                 civilian._animate()
 
     def __reduce_health(self):
-        self.__health -= 1
-        self.__header.health = self.__health
-        if(self.__health < 1): print('GAME OVER', self.__health)
+        self.health -= 1
+        self.__header.health = self.health
 
     def __bring_civilian_collapse(self):
         bring_delay = 0.2

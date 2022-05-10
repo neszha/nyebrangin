@@ -40,8 +40,7 @@ class Level:
         self.__background.fill(pg.Color(255, 255, 255))
         self.__level = levels[state.LEVEL_RUNNING - 1]
         state.SHOW_POPUP = False
-        # self.__waiting_play.open()
-        self.__finish.open()
+        self.__waiting_play.open()
 
     def __load_map(self):
         map = self.__level.map
@@ -96,6 +95,18 @@ class Level:
         self.__status = 'pause'
         self.__waiting_play.open()
 
+    def __game_finish(self):
+        self.__finish.set_item('10:00', 2)
+        self.__finish.open()
+
+    def __game_over(self): 
+        self.__status = 'pause'
+        print('game over')
+
+    def __watch_level(self):
+        if not len(self.__civilians): self.__game_finish()
+        if not self.__player.health: self.__game_over()
+
     def __input_keys(self):
         keys = pg.key.get_pressed()
         if keys[pg.K_ESCAPE]: self.__pause()
@@ -103,6 +114,7 @@ class Level:
     def render(self):
         self.backsong.watch_setting()
         self.__input_keys()
+        self.__watch_level()
         self.__screen.blit(self.__background, (0, 0))
         self.__screen.blit(self.__map, (0, 0))
         self.__obstacles.draw(self.__screen)
