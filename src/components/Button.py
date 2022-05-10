@@ -1,4 +1,4 @@
-from time import sleep, time
+from time import time
 import pygame as pg
 
 press_delay = 0.5 # Second.
@@ -25,9 +25,9 @@ class Button:
     def __click_detector(self):
         global temp_time, press_delay
         if self.__hovered and pg.mouse.get_pressed()[0] and not self.__clicked:
-            self.__clicked = True
             if (time() - temp_time) < press_delay: return False
             temp_time = time()
+            self.__clicked = True
             if self.__command0: self.__command0()
             if self.__command1: self.__command1()
             if self.__command_data: self.__command_data(self.__data)

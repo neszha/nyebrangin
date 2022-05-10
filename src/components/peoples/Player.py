@@ -1,18 +1,22 @@
 import pygame as pg
+from time import time
 from src.components.People import People
 
 class Player(People):
 
-    def __init__(self, name, health, position, speed, obstacles, cars, header):
+    def __init__(self, name, health, position, speed, header, obstacles, cars, civilians):
         super().__init__(name, position)
         self.__health = health
         self.__speed = speed
+        self.__header = header
         self.__obstacles = obstacles
         self.__cars = cars
-        self.__car_id = 0
-        self.__header = header
+        self.__civilians = civilians
+        self.__object_id = { 'car': 0, 'civilian': 0}
+        self.__key_pressed = { 'space': time() }
 
         self.__header.health = self.__health
+        self.shadow.fill(pg.Color(0, 0, 0, 50))
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
@@ -32,49 +36,78 @@ class Player(People):
             self.direction_status = 'left'
         else: self.direction.x = 0
 
+        if keys[pg.K_SPACE]: self.__bring_civilian_collapse()
+
     def __move(self):
         if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
-        self.shadow_rect.x += self.direction.x * self.__speed
+        self.rect.x += self.direction.x * self.__speed
         self.__collision_obstacles('x')
-        self.shadow_rect.y += self.direction.y * self.__speed
+        self.rect.y += self.direction.y * self.__speed
         self.__collision_obstacles('y')
-        self.position = [self.shadow_rect.x - 17, self.shadow_rect.y - 50]
-        self.__collision_cars()
+        self.position = [self.rect.x - 17, self.rect.y - 50]
 
     def __collision_obstacles(self, direction):
         for obstacle in self.__obstacles:
-            if obstacle.rect.colliderect(self.shadow_rect):
+            if obstacle.rect.colliderect(self.rect):
                 if direction == 'x':
-                    if self.direction.x > 0: self.shadow_rect.right = obstacle.rect.left
-                    if self.direction.x < 0: self.shadow_rect.left = obstacle.rect.right
+                    if self.direction.x > 0: self.rect.right = obstacle.rect.left
+                    if self.direction.x < 0: self.rect.left = obstacle.rect.right
                 if direction == 'y':
-                    if self.direction.y > 0: self.shadow_rect.bottom = obstacle.rect.top
-                    if self.direction.y < 0: self.shadow_rect.top = obstacle.rect.bottom
+                    if self.direction.y > 0: self.rect.bottom = obstacle.rect.top
+                    if self.direction.y < 0: self.rect.top = obstacle.rect.bottom
 
     def __collision_cars(self):
         for car in self.__cars:
-            if car.rect.colliderect(self.shadow_rect):
-                if self.__car_id != id(car):
+            if car.rect.colliderect(self.rect):
+                if self.__object_id['car'] != id(car):
                     print(f'Player ditabrak mobil {id(car)}')
                     self.__reduce_health()
-                    self.__car_id = id(car)
+                    self.__object_id['car'] = id(car)
+
+    def __collistion_civilians(self):
+        for civilian in self.__civilians:
+            if civilian.rect.colliderect(self.rect):
+                civilian.show_destination = True
+                civilian.shadow.fill(pg.Color(102, 255, 51, 150))
+                self.__object_id['civilian'] = id(civilian)
+            else:
+                civilian.show_destination = False
+
+    def __follow_me(self):
+        direction = self.direction_status
+        x, y = self.rect.x, self.rect.y
+        for civilian in self.__civilians:
+            if civilian.bring_player:
+                if direction == 'down': y -= 24
+                elif direction == 'up': y += 24
+                elif direction == 'left': x += 24
+                elif direction == 'right': x -= 24
+                civilian.direction_status = direction
+                civilian.rect.x = x
+                civilian.rect.y = y
+                civilian._animate()
 
     def __reduce_health(self):
         self.__health -= 1
         self.__header.health = self.__health
         if(self.__health < 1): print('GAME OVER', self.__health)
 
-    def bring_civilian(self):
-        pass
-
-    def free_civilian(self):
-        pass
+    def __bring_civilian_collapse(self):
+        bring_delay = 0.2
+        if (time() - self.__key_pressed['space']) < bring_delay: return False
+        for civilian in self.__civilians:
+            bring = civilian.bring_player
+            if civilian.rect.colliderect(self.rect): civilian.bring_player = not bring
+        self.__key_pressed['space'] = time()
 
     def update(self):
         self.__input_controls()
         self._animate()
         self.__move()
+        self.__collision_cars()
+        self.__collistion_civilians()
+        self.__follow_me()
 
     def render(self, screen):
-        screen.blit(self.shadow, self.shadow_rect)
-        screen.blit(self.character, self.position)
+        screen.blit(self.shadow, self.rect)
+        screen.blit(self.image, self.position)

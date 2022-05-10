@@ -5,8 +5,9 @@ from src.levels.list import levels
 from src.components.Car import Car
 from random import randrange, choice
 from src.components.Audio import Audio
-from src.components.peoples.Player import Player
 from src.components.GameHeader import GameHeader
+from src.components.peoples.Player import Player
+from src.components.peoples.Civilian import Civilian
 from src.components.popups.WaitingPlay import WaitingPlay
 from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
@@ -21,11 +22,13 @@ class Level:
         self.__header = GameHeader()
         self.__obstacles = pg.sprite.Group()
         self.__cars = pg.sprite.Group()
+        self.__civilians = pg.sprite.Group()
 
         self.__setup_level()
         self.__load_map()
         self.__load_obstacles()
         self.__load_cars(begin=True)
+        self.__load_civilians()
         self.__load_player()
     
     def __setup_level(self):
@@ -67,12 +70,17 @@ class Level:
         player = self.__level.player
         self.__player = Player(
             player.name, player.health, player.position, player.speed, 
-            self.__obstacles, self.__cars, self.__header
+            self.__header, self.__obstacles, self.__cars, self.__civilians
         )
         self.__player.update()
 
     def __load_civilians(self):
-        pass
+        civilians = self.__level.civilian.list
+        for data in civilians:
+            civilian = Civilian(data['name'], data['position'], data['destination'])
+            self.__civilians.add(civilian)
+        self.__civilians.update()
+        self.__header.civilan = len(civilians)
     
     def __start(self):
         self.__status = 'running'
@@ -92,12 +100,14 @@ class Level:
         self.__screen.blit(self.__map, (0, 0))
         self.__obstacles.draw(self.__screen)
         self.__cars.draw(self.__screen)
+        for civilian in self.__civilians: civilian.render(self.__screen)
         self.__player.render(self.__screen)
         self.__header.render(self.__screen)
         
         if self.__status == 'running':
             self.__load_cars()
             self.__cars.update()
+            self.__civilians.update()
             self.__player.update()
         else:    
             self.__waiting_play.render(self.__screen)

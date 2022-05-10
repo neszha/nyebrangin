@@ -42,6 +42,13 @@ car.direction = {
 
 # Civilians.
 civilian = Data()
+civilian.list = [
+    {
+        'name': 'tony',
+        'position': [300, 290],
+        'destination': [600, 290]
+    },
+]
 
 # Palyer
 player = Data()
