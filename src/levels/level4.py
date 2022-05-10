@@ -39,11 +39,11 @@ car.direction = {
     # 'direction': [random range position y]
     'left': [
         [174, 300],
-        [0, 200],
+        [473, 572],
     ],
     'right': [
         [463, 572],
-        [463, 572],
+        [174, 220],
     ],
 }
 
@@ -52,7 +52,7 @@ civilian = Data()
 civilian.list = [
     {
         'name': 'tony',
-        'position': [300, 290],
+        'position': [150, 100],
         'destination': [600, 290]
     },
     {
