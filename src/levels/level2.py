@@ -49,8 +49,18 @@ civilian = Data()
 civilian.list = [
     {
         'name': 'tony',
-        'position': [300, 290],
-        'destination': [600, 290]
+        'position': [46, 255],
+        'destination': [1227, 270]
+    },
+    {
+        'name': 'tony',
+        'position': [266, 640],
+        'destination': [1227, 270]
+    },
+    {
+        'name': 'tony',
+        'position': [1123, 670],
+        'destination': [1227, 270]
     },
 ]
 
