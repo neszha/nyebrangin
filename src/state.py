@@ -10,7 +10,7 @@ MUSIC = False
 SOUND_FX = False
 
 ## Level berjalan.
-LEVEL_RUNNING = 1
+LEVEL_RUNNING = 4
 
 ## Checkpoint.
 CURRENT_LEVEL = 5

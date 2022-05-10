@@ -57,7 +57,8 @@ class Level:
             path = choice(car.use)
             position = [-120, 0]
             direction = choice(list(car.direction))
-            position[1] = randrange(car.direction[direction][0], car.direction[direction][1])
+            position_index = randrange(0, len(car.direction[direction]))
+            position[1] = randrange(car.direction[direction][position_index][0], car.direction[direction][position_index][1])
             speed = randrange(car.speed_range[0], car.speed_range[1]) / 4
             if begin: position[0] = randrange(-400, WIDTH + 120)
             else:

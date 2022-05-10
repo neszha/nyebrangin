@@ -1,7 +1,7 @@
 from time import time
 import pygame as pg
 
-press_delay = 0.5 # Second.
+press_delay = 0.3 # Second.
 temp_time = time()
 
 class Button:
