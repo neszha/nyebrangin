@@ -44,12 +44,12 @@ class Menu:
 
         # Load komponen pop-up.
         self.__settings = Settings()
-        self.__levels = BoxLevels()
+        self.__box_levels = BoxLevels()
 
         # Load komponen tombol.
         self.__buttons = [
             Button('assets/images/buttons/setting.png', [40, 40], self.__settings.open),
-            Button('assets/images/buttons/start.png', [WIDTH/2, 280], self.__levels.open),
+            Button('assets/images/buttons/start.png', [WIDTH/2, 280], self.__box_levels.open),
             Button('assets/images/buttons/exit.png', [WIDTH/2, 380], self.exit),
         ]
 
@@ -62,9 +62,9 @@ class Menu:
         for cloud in self.__clouds: cloud.render(self.__screen)
         self.__screen.blit(self.__text_logo, self.__text_logo_rect)
         self.__screen.blit(self.__arrow_direction, self.__arrow_direction_rect)
-        for button in self.__buttons: button.render(self.__screen)
+        for btn in self.__buttons: btn.render(self.__screen)
         self.__settings.render(self.__screen)
-        self.__levels.render(self.__screen)
+        self.__box_levels.render(self.__screen)
     
     def exit(self):
         if not state.SHOW_POPUP:

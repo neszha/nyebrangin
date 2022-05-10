@@ -1,5 +1,5 @@
 ## Navigasi menu.
-PAGE = 'menu' # menu|geme-run
+PAGE = 'menu' # menu|geme-run|loading-screen
 # PAGE = 'game-run'
 
 ## Status menampilkan fitur popup.
@@ -13,7 +13,7 @@ SOUND_FX = False
 LEVEL_RUNNING = 1
 
 ## Checkpoint.
-CURRENT_LEVEL = 5
+CURRENT_LEVEL = 4
 # LEVELS = [
 #     {
 #         'score': 0,

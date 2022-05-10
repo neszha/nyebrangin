@@ -26,23 +26,6 @@ class GameHeader:
         self.__civilian_counter.to_top_left()
         self.__civilian_counter.render(screen)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
     def render(self, screen):
         self.__render_health(screen)
         self.__render_civilian_len(screen)

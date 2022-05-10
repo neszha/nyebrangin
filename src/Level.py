@@ -9,6 +9,7 @@ from src.components.GameHeader import GameHeader
 from src.components.peoples.Player import Player
 from src.components.peoples.Civilian import Civilian
 from src.components.popups.WaitingPlay import WaitingPlay
+from src.components.popups.Finish import Finish
 from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
 # class Data: pass
@@ -19,6 +20,7 @@ class Level:
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
         self.__waiting_play = WaitingPlay(start_command=self.__start)
+        self.__finish = Finish()
         self.__header = GameHeader()
         self.__obstacles = pg.sprite.Group()
         self.__cars = pg.sprite.Group()
@@ -38,7 +40,8 @@ class Level:
         self.__background.fill(pg.Color(255, 255, 255))
         self.__level = levels[state.LEVEL_RUNNING - 1]
         state.SHOW_POPUP = False
-        self.__waiting_play.open()
+        # self.__waiting_play.open()
+        self.__finish.open()
 
     def __load_map(self):
         map = self.__level.map
@@ -107,6 +110,7 @@ class Level:
         for civilian in self.__civilians: civilian.render(self.__screen)
         self.__player.render(self.__screen)
         self.__header.render(self.__screen)
+        self.__finish.render(self.__screen)
         
         if self.__status == 'running':
             self.__load_cars()

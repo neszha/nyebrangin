@@ -6,16 +6,13 @@ from src.components.PopUp import PopUp
 from src.components.Button import Button
 
 class Data: pass
-class WaitingPlay(PopUp):
+class GameOver(PopUp):
 
     def __init__(self, start_command):
         self.__start_command = start_command
         self.__texts = []
         self.__btns = []
-        
-        text = f'Level {state.LEVEL_RUNNING}'
-        bg = 'assets/images/backgrounds/settings.png'
-        super().__init__(text, bg, False)
+        super().__init__('FINISH!', 'assets/images/backgrounds/end.png', False)
         self.__load_local_componenets()
 
     def __load_local_componenets(self):
