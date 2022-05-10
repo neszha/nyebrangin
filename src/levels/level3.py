@@ -32,8 +32,8 @@ car.use = [
     'assets/images/cars/vertical/2.png',
     'assets/images/cars/vertical/3.png',
 ]
-car.traffic_density = [1, 3]
-car.speed_range = [100, 2000]
+car.traffic_density = [4, 7]
+car.speed_range = [20, 40]
 car.direction = {
     # 'direction': [random range position y]
     'left': [350, 420],
