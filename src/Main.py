@@ -13,6 +13,7 @@ class Main:
 
         # Menyiapkan game.
         pg.init()
+        pg.mixer.init() 
         pg.display.set_caption(self.__game_name)
         self.clock = pg.time.Clock()
 
