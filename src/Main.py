@@ -31,7 +31,14 @@ class Main:
                 if self.__menu:
                     self.__menu.backsong.stop()
                     self.__menu = None
+            if state.LEVEL_RESET:
+                self.__level = None
+                self.__level = Level()
+                state.LEVEL_RESET = False
             self.__level.render()
+        elif state.PAGE == 'loading-screen':
+            if self.__menu: self.__menu = None
+            if self.__level: self.__level = None
 
     def run(self):
         while True:

@@ -6,10 +6,11 @@ from src.components.Car import Car
 from random import randrange, choice
 from src.components.Audio import Audio
 from src.components.GameHeader import GameHeader
+from src.components.popups.Finish import Finish
 from src.components.peoples.Player import Player
+from src.components.popups.GameOver import GameOver
 from src.components.peoples.Civilian import Civilian
 from src.components.popups.WaitingPlay import WaitingPlay
-from src.components.popups.Finish import Finish
 from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
 # class Data: pass
@@ -20,7 +21,8 @@ class Level:
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
         self.__waiting_play = WaitingPlay(start_command=self.__start)
-        self.__finish = Finish()
+        self.__game_finish = Finish()
+        self.__game_over = GameOver()
         self.__header = GameHeader()
         self.__obstacles = pg.sprite.Group()
         self.__cars = pg.sprite.Group()
@@ -95,17 +97,17 @@ class Level:
         self.__status = 'pause'
         self.__waiting_play.open()
 
-    def __game_finish(self):
-        self.__finish.set_item('10:00', 2)
-        self.__finish.open()
+    def __game_finish_handdle(self):
+        self.__game_finish.set_item('00:00', 3)
+        self.__game_finish.open()
 
-    def __game_over(self): 
+    def __game_over_handdle(self): 
         self.__status = 'pause'
-        print('game over')
+        self.__game_over.open()
 
     def __watch_level(self):
-        if not len(self.__civilians): self.__game_finish()
-        if not self.__player.health: self.__game_over()
+        if len(self.__civilians) <= 0: self.__game_finish_handdle()
+        if self.__player.health <= 0: self.__game_over_handdle()
 
     def __input_keys(self):
         keys = pg.key.get_pressed()
@@ -122,7 +124,8 @@ class Level:
         for civilian in self.__civilians: civilian.render(self.__screen)
         self.__player.render(self.__screen)
         self.__header.render(self.__screen)
-        self.__finish.render(self.__screen)
+        self.__game_finish.render(self.__screen)
+        self.__game_over.render(self.__screen)
         
         if self.__status == 'running':
             self.__load_cars()

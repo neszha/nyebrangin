@@ -1,5 +1,3 @@
-from time import sleep
-import pygame as pg
 import src.state as state
 from src.config import *
 from src.components.Text import Text

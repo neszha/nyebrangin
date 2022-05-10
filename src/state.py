@@ -10,10 +10,11 @@ MUSIC = True
 SOUND_FX = True
 
 ## Level berjalan.
+LEVEL_RESET = False
 LEVEL_RUNNING = 1
 
 ## Checkpoint.
-CURRENT_LEVEL = 4
+CURRENT_LEVEL = 2
 # LEVELS = [
 #     {
 #         'score': 0,
