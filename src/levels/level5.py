@@ -7,7 +7,7 @@ game.coutdown = 60 # Seconds.
 # Map.
 map = Data()
 map.image_path = 'assets/maps/MAP02.png' # Location of game map.
-map.forbidden_area_color = (255, 0, 0, 100) # (R, G, B, A).
+map.forbidden_area_color = (255, 0, 0, 0) # (R, G, B, A).
 map.forbidden_area = [ 
     # [(size), (location)],
     [(1280, 76), (0, 0)],

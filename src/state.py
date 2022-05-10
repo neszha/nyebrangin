@@ -15,7 +15,7 @@ LEVEL_RUNNING = 1
 
 ## Checkpoint.
 CURRENT_LEVEL = 2
-# LEVELS = [
+# SAVE_LEVELS = [
 #     {
 #         'score': 0,
 #         'time_left': 0
