@@ -7,6 +7,9 @@ class Main:
         self.__game_name = game_name
         pygame.init()
         pygame.display.set_caption(self.__game_name)
+        bs = pygame.mixer.Sound('assets/audios/backsongs/bs-menu.mp3')
+        bs.set_volume(0.5)
+        bs.play()
         self.clock = pygame.time.Clock()
 
     def __game_loop(self):
