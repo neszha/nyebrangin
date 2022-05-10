@@ -77,10 +77,13 @@ class Level:
     def __load_civilians(self):
         civilians = self.__level.civilian.list
         for data in civilians:
-            civilian = Civilian(data['name'], data['position'], data['destination'])
+            civilian = Civilian(
+                data['name'], data['position'], data['destination'], 
+                self.__header, self.__cars
+            )
             self.__civilians.add(civilian)
         self.__civilians.update()
-        self.__header.civilan = len(civilians)
+        self.__header.civilian = len(civilians)
     
     def __start(self):
         self.__status = 'running'

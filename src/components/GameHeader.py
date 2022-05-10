@@ -6,11 +6,11 @@ class GameHeader:
     
     def __init__(self):
         self.health = 0
-        self.civilan = 0
+        self.civilian = 0
         self.__load_componenets()
 
     def __load_componenets(self):
-        self.__civilian_counter = Text(self.civilan, [18, 10], 36)
+        self.__civilian_counter = Text(self.civilian, [18, 10], 36)
         self.__civilian_counter.to_top_left()
 
     def __render_health(self, screen):
@@ -22,7 +22,7 @@ class GameHeader:
             position[0] -= 54 
 
     def __render_civilian_len(self, screen):
-        self.__civilian_counter.set_text(self.civilan)
+        self.__civilian_counter.set_text(self.civilian)
         self.__civilian_counter.to_top_left()
         self.__civilian_counter.render(screen)
 

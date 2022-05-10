@@ -1,5 +1,5 @@
 ## Informasi game
-GAME_NAME = "Nyebrangin"
+GAME_NAME = "Nyebrangin - Game by Pulangmen"
 VERSION = '1.0.0'
 
 ## Configurasi tampilan
