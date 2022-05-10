@@ -36,8 +36,12 @@ car.traffic_density = [4, 7]
 car.speed_range = [20, 40]
 car.direction = {
     # 'direction': [random range position y]
-    'left': [350, 420],
-    'right': [430, 500],
+    'left': [
+        [350, 420],
+    ],
+    'right': [
+        [430, 500],
+    ],
 }
 
 # Civilians.

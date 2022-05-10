@@ -39,11 +39,11 @@ car.direction = {
     # 'direction': [random range position y]
     'left': [
         [174, 300],
-        [0, 200]
+        [0, 200],
     ],
     'right': [
         [463, 572],
-        [463, 572]
+        [463, 572],
     ],
 }
 

@@ -1,6 +1,6 @@
 ## Navigasi menu.
 PAGE = 'menu' # menu|geme-run
-PAGE = 'game-run'
+# PAGE = 'game-run'
 
 ## Status menampilkan fitur popup.
 SHOW_POPUP = False
@@ -10,7 +10,7 @@ MUSIC = False
 SOUND_FX = False
 
 ## Level berjalan.
-LEVEL_RUNNING = 4
+LEVEL_RUNNING = 1
 
 ## Checkpoint.
 CURRENT_LEVEL = 5
