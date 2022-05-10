@@ -14,6 +14,7 @@ class Player(People):
         self.__civilians = civilians
         self.__object_id = { 'car': 0, 'civilian': 0}
         self.__key_pressed = { 'space': time() }
+        self.__temp = {'speed': speed}
 
         self.__header.health = self.__health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
@@ -37,6 +38,11 @@ class Player(People):
         else: self.direction.x = 0
 
         if keys[pg.K_SPACE]: self.__bring_civilian_collapse()
+
+        # Manipulasi kecepatan player.
+        walk_speed = 2
+        if keys[pg.K_w]: self.__speed = walk_speed
+        else: self.__speed = self.__temp['speed']
 
     def __move(self):
         if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
