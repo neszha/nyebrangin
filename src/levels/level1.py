@@ -69,4 +69,4 @@ player = Data()
 player.name = 'tony'
 player.position = [200, 290]
 player.health = 3
-player.speed = 8
+player.speed = 3

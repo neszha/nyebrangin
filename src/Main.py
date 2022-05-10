@@ -32,6 +32,7 @@ class Main:
                     self.__menu.backsong.stop()
                     self.__menu = None
             if state.LEVEL_RESET:
+                self.__level.backsong.stop()
                 self.__level = None
                 self.__level = Level()
                 state.LEVEL_RESET = False
