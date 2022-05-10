@@ -50,27 +50,27 @@ civilian.list = [
     {
         'name': 'tony',
         'position': [300, 300],
-        'destination': [600, 290]
+        'destination': [1227, 270]
     },
     {
         'name': 'tony',
         'position': [780, 300],
-        'destination': [700, 290]
+        'destination': [1227, 270]
     },
     {
         'name': 'tony',
         'position': [690, 650],
-        'destination': [700, 600]
+        'destination': [1227, 270]
     },
     {
         'name': 'tony',
         'position': [1170, 650],
-        'destination': [700, 600]
+        'destination': [1227, 270]
     },
      {
         'name': 'tony',
         'position': [140, 710],
-        'destination': [700, 600]
+        'destination': [1227, 270]
     },
 ]
 
