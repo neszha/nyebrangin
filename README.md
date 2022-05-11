@@ -52,11 +52,11 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
  | KELOMPOK : PULANGMEN - RB05 |
 | ---------------- |
 
-| NIM  | Nama |
-| ----- | --- |
-| 119140117  | Chantika Aurrelia |
-| 120140149  | Dewi Anggraini  |
-| 120140189  | Fanesa Hadi Pramana  |
-| 120140043  | Irsan Romardi Harahap  |
-| 120140071  | Muhammad Rizky Fahreza Gusti  |
-| 120140039  | Tara Nadani Mozart  |git
+| NIM  | Nama | As |
+| ----- | --- | --- |
+| 120140043  | Irsan Romardi Harahap  | Leader and Tester |
+| 119140117  | Chantika Aurrelia | Game Designer and Artist |
+| 120140039  | Tara Nadani Mozart  | Game Designer and Artist |
+| 120140149  | Dewi Anggraini  | Level Designer |
+| 120140189  | Fanesa Hadi Pramana  | Programmer |
+| 120140071  | Muhammad Rizky Fahreza Gusti  | Programmer |
