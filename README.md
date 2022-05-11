@@ -55,8 +55,8 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 | NIM  | Nama | As |
 | ----- | --- | --- |
 | 120140043  | Irsan Romardi Harahap  | Leader and Tester |
+| 120140149  | Dewi Anggraini  | Level Designer |
 | 119140117  | Chantika Aurrelia | Game Designer and Artist |
 | 120140039  | Tara Nadani Mozart  | Game Designer and Artist |
-| 120140149  | Dewi Anggraini  | Level Designer |
 | 120140189  | Fanesa Hadi Pramana  | Programmer |
 | 120140071  | Muhammad Rizky Fahreza Gusti  | Programmer |
