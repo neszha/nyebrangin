@@ -58,7 +58,7 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 
 ## UML Class Diagram Game
 <br />
-<img src="docs/UML Class 2 - Nyebrangin .png" width="500">
+<img src="docs/UML Class 2 - Nyebrangin .png" width="800">
 
 ## Kontributor Pengembangan Game
 
