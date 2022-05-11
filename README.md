@@ -1,5 +1,4 @@
-# NYEBRANGIN GAME
-     Game developer by : PULANGMEN
+# NYEBRANGIN - GAME BY PULANGMEN
 
 ## Deskripsi Game
 
