@@ -57,6 +57,8 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 10. GAME SELESAI dan Menampilkan hasil Skor.
 
 ## UML Class Diagram Game
+<br />
+<img src="docs/UML Class 2 - Nyebrangin " width="500">
 
 ## Kontributor Pengembangan Game
 
