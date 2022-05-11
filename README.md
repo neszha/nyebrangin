@@ -1,18 +1,5 @@
 # NYEBRANGIN GAME
-     Game developer by : PULANGMEN 01
-
-| KELOMPOK : PULANGMEN - RB05 |
-| ---------------- |
-
-| NIM  | Nama |
-| ----- | --- |
-| 119140117  | Chantika Aurrelia |
-| 120140149  | Dewi Anggraini  |
-| 120140189  | Fanesa Hadi Pramana  |
-| 120140043  | Irsan Romardi Harahap  |
-| 120140071  | Muhammad Rizky Fahreza Gusti  |
-| 120140039  | Tara Nadani Mozart  |
-
+     Game developer by : PULANGMEN
 
 ## Deskripsi Game
 
@@ -61,4 +48,15 @@ Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat ya
 <img src="docs/UML Class 2 - Nyebrangin .png" width="800">
 
 ## Kontributor Pengembangan Game
+ 
+ | KELOMPOK : PULANGMEN - RB05 |
+| ---------------- |
 
+| NIM  | Nama |
+| ----- | --- |
+| 119140117  | Chantika Aurrelia |
+| 120140149  | Dewi Anggraini  |
+| 120140189  | Fanesa Hadi Pramana  |
+| 120140043  | Irsan Romardi Harahap  |
+| 120140071  | Muhammad Rizky Fahreza Gusti  |
+| 120140039  | Tara Nadani Mozart  |git
