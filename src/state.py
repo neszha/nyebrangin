@@ -14,7 +14,7 @@ LEVEL_RESET = False
 LEVEL_RUNNING = 1
 
 ## Checkpoint.
-CURRENT_LEVEL = 2
+CURRENT_LEVEL = 8
 MAX_LEVEL = 8
 # SAVE_LEVELS = [
 #     {
