@@ -6,7 +6,7 @@ PAGE = 'menu' # menu|geme-run|loading-screen
 SHOW_POPUP = False
 
 ## Pengaturan.
-MUSIC = True
+MUSIC = False
 SOUND_FX = True
 
 ## Level berjalan.
@@ -15,6 +15,7 @@ LEVEL_RUNNING = 1
 
 ## Checkpoint.
 CURRENT_LEVEL = 2
+MAX_LEVEL = 8
 # SAVE_LEVELS = [
 #     {
 #         'score': 0,

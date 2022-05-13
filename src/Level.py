@@ -106,7 +106,7 @@ class Level:
         self.__game_over.open()
 
     def __watch_level(self):
-        if len(self.__civilians) <= 0: self.__game_finish_handdle()
+        if self.__header.civilian <= 0: self.__game_finish_handdle()
         if self.__player.health <= 0: self.__game_over_handdle()
 
     def __input_keys(self):
