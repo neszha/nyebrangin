@@ -50,7 +50,7 @@ civilian.list = [
     {
         'name': 'tony',
         'position': [46, 255],
-        'destination': [1227, 270]
+        'destination': [1227, 640]
     },
     {
         'name': 'tony',
