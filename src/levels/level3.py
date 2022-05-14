@@ -50,12 +50,12 @@ civilian.list = [
     {
         'name': 'tony',
         'position': [300, 300],
-        'destination': [1227, 270]
+        'destination': [1227, 650]
     },
     {
         'name': 'tony',
         'position': [780, 300],
-        'destination': [1227, 270]
+        'destination': [1227, 650]
     },
     {
         'name': 'tony',
@@ -79,4 +79,4 @@ player = Data()
 player.name = 'tony'
 player.position = [200, 290]
 player.health = 3
-player.speed = 8
+player.speed = 5
