@@ -43,12 +43,14 @@ class Finish(PopUp):
         self.__time_left = time_left
         self.__trophy_number = trophy_number
         self.__load_local_componenets()
-        print(self.__time_left)
 
     def __next_level(self): 
         state.PAGE = 'menu'
         state.LEVEL_RUNNING += 1
-        if state.CURRENT_LEVEL < state.LEVEL_RUNNING: state.CURRENT_LEVEL = state.LEVEL_RUNNING
+        if state.LEVEL_RUNNING > state.MAX_LEVEL:
+            state.LEVEL_RUNNING = state.MAX_LEVEL
+        if state.CURRENT_LEVEL < state.LEVEL_RUNNING: 
+            state.CURRENT_LEVEL = state.LEVEL_RUNNING
         self.close()
 
     def render(self, screen):

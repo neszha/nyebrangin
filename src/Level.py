@@ -1,5 +1,7 @@
+import datetime as dt
 import pygame as pg
 import src.state as state
+from time import time
 from src.config import *
 from src.levels.list import levels
 from src.components.Car import Car
@@ -29,6 +31,7 @@ class Level:
         self.__obstacles = pg.sprite.Group()
         self.__cars = pg.sprite.Group()
         self.__civilians = pg.sprite.Group()
+        self.__timing = { 'countdown': 0, 'start': 0}
 
         self.__setup_level()
         self.__load_map()
@@ -44,6 +47,8 @@ class Level:
         self.__background.fill(pg.Color(255, 255, 255))
         self.__level = levels[state.LEVEL_RUNNING - 1]
         state.SHOW_POPUP = False
+        self.__timing['countdown'] = self.__level.game.coutdown
+        self.__header.countdown = dt.timedelta(seconds=self.__timing['countdown'])
         self.__waiting_play.open()
 
     def __load_map(self):
@@ -99,6 +104,8 @@ class Level:
     
     def __start(self):
         self.__status = 'running'
+        self.__timing['start'] = time()
+        print(self.__timing)
 
     def __pause(self):
         self.__status = 'pause'
@@ -106,7 +113,13 @@ class Level:
 
     def __game_finish_handdle(self):
         state.SHOW_POPUP = False
-        self.__game_finish.set_item('00:00', 3)
+        game = self.__level.game
+        cd = self.__timing['countdown']
+        trophy = 0
+        for item in game.trophy:
+            if cd > item['time_left'] and not trophy: 
+                trophy = item['trophy']
+        self.__game_finish.set_item(dt.timedelta(seconds=cd), trophy)
         self.__game_finish.open()
         self.__done = True
         self.__status = 'game_finish'
@@ -121,10 +134,18 @@ class Level:
         if self.__done: return True
         if self.__header.civilian <= 0: self.__game_finish_handdle()
         elif self.__player.health <= 0: self.__game_over_handdle()
+        elif self.__timing['countdown'] <= 0: self.__game_over_handdle()
 
     def __input_keys(self):
         keys = pg.key.get_pressed()
         if keys[pg.K_ESCAPE]: self.__pause()
+
+    def __watch_coutdown(self):
+        if time() - self.__timing['start'] >= 1:
+            self.__timing['countdown'] -= 1
+            if self.__timing['countdown'] < 0: self.__timing['countdown'] = 0
+            self.__timing['start'] = time()
+            self.__header.countdown = dt.timedelta(seconds=self.__timing['countdown'])
 
     def render(self):
         self.backsong.watch_setting()
@@ -145,5 +166,6 @@ class Level:
             self.__cars.update()
             self.__civilians.update()
             self.__player.update()
+            self.__watch_coutdown()
         elif self.__status == 'waiting' or self.__status == 'pause':    
             self.__waiting_play.render(self.__screen)
