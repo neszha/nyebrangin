@@ -12,7 +12,7 @@ class Car(pg.sprite.Sprite):
     def __load_car(self, path, position):
         self.image = pg.image.load(path).convert_alpha()
         self.rect = self.image.get_rect(topleft=position)
-        if self.__direction == 'left': self.image = pg.transform.flip(self.image, True, False)
+        if self.__direction == 'right': self.image = pg.transform.flip(self.image, True, False)
 
     def update(self): 
         if self.__direction == 'left': 

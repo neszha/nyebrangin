@@ -30,7 +30,14 @@ car = Data()
 car.use = [ 
     'assets/images/cars/vertical/1.png',
     # 'assets/images/cars/vertical/2.png',
-    # 'assets/images/cars/vertical/3.png',
+    'assets/images/cars/vertical/3.png',
+    # 'assets/images/cars/vertical/4.png',
+    # 'assets/images/cars/vertical/5.png',
+    # 'assets/images/cars/vertical/6.png',
+    # 'assets/images/cars/vertical/7.png',
+    # 'assets/images/cars/vertical/8.png',
+    # 'assets/images/cars/vertical/9.png',
+    # 'assets/images/cars/vertical/10.png',
 ]
 car.traffic_density = [1, 3]
 car.speed_range = [10, 20]
