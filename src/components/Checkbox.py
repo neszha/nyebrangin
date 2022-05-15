@@ -14,8 +14,8 @@ class CheckBox:
         path_unchecked = 'assets/images/buttons/checkbox-unchecked.png'
 
         # Membuat tombol checkbox.
-        self.btn_checked = Button(path_checked, self.__positions, self.__checked_toggle, self.__command)
-        self.btn_unchecked = Button(path_unchecked, self.__positions, self.__checked_toggle, self.__command)
+        self.btn_checked = Button(path_checked, self.__positions, self.__checked_toggle, self.__command, index=2)
+        self.btn_unchecked = Button(path_unchecked, self.__positions, self.__checked_toggle, self.__command, index=2)
 
     def __checked_toggle(self):
         self.checked = not self.checked

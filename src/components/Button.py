@@ -1,12 +1,13 @@
 from time import time
 import pygame as pg
+import src.state as state
 
 press_delay = 0.3 # Second.
 temp_time = time()
 
 class Button:
     
-    def __init__(self, path, positions, command0=False, command1=False, command_data=False, data=None):
+    def __init__(self, path, positions, command0=False, command1=False, command_data=False, data=None, index=1):
         self.__positions = positions
         self.__btn = pg.image.load(path).convert_alpha()
         self.__btn_rect = self.__btn.get_rect(center=self.__positions)
@@ -16,6 +17,7 @@ class Button:
         self.__command1 = command1
         self.__command_data = command_data
         self.__data = data
+        self.__index = index
 
     def __hover_detector(self):
         mouse_pos = pg.mouse.get_pos()
@@ -34,8 +36,9 @@ class Button:
         if not pg.mouse.get_pressed()[0]: self.__clicked = False
 
     def render(self, screen):
-        self.__hover_detector()
-        self.__click_detector()
+        if self.__index == state.INDEX_LAYER:
+            self.__hover_detector()
+            self.__click_detector()
         screen.blit(self.__btn, self.__btn_rect)
         
 

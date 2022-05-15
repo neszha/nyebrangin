@@ -30,12 +30,12 @@ class Finish(PopUp):
         self.__btns = [
             Button(
                 f'assets/images/trophy{self.__trophy_number}.png',
-                [(WIDTH/2), (HEIGTH/2) + 40],
+                [(WIDTH/2), (HEIGTH/2) + 40], index=2
             ),
             Button(
                 'assets/images/buttons/next-level.png', 
                 [(WIDTH/2), (HEIGTH/2) + (bg_size_y/2) - 60],
-                command0=self.__next_level
+                command0=self.__next_level, index=2
             )
         ]
     

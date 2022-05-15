@@ -27,7 +27,7 @@ class PopUp:
         # Load tombol tutup popup.
         btn_pos_x = (WIDTH/2) + (bg_size_x/2) - 60
         btn_pos_y = (HEIGTH/2) - (bg_size_y/2) + 50
-        self.btn_close = Button('assets/images/buttons/btn-close.png', [btn_pos_x, btn_pos_y], self.close)
+        self.btn_close = Button('assets/images/buttons/btn-close.png', [btn_pos_x, btn_pos_y], self.close, index=2)
     
     def render_popup(self, screen):
         if self._show:
@@ -39,7 +39,9 @@ class PopUp:
         if not self._show and not state.SHOW_POPUP:
             self._show = True
             state.SHOW_POPUP = True
+            state.INDEX_LAYER = 2
 
     def close(self):
         self._show = False
         state.SHOW_POPUP = False
+        state.INDEX_LAYER = 1

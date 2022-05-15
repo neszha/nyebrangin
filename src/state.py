@@ -4,6 +4,7 @@ PAGE = 'menu' # menu|geme-run|loading-screen
 
 ## Status menampilkan fitur popup.
 SHOW_POPUP = False
+INDEX_LAYER = 1
 
 ## Pengaturan.
 MUSIC = False

@@ -27,14 +27,14 @@ class WaitingPlay(PopUp):
             Button(
                 'assets/images/buttons/home.png', 
                 [text_pos_x - (bg_size_x / 3.5), text_pos_y + 100], 
-                command0=self.__back_to_menu
+                command0=self.__back_to_menu, index=2
             )
         )
         self.__btns.append(
             Button(
                 'assets/images/buttons/play.png', 
                 [text_pos_x + (bg_size_x / 5.8), text_pos_y + 100], 
-                command0=self.__start_command
+                command0=self.__start_command, index=2
             )
         )
 

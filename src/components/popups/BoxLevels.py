@@ -25,7 +25,7 @@ class BoxLevels(PopUp):
         for i in range(8):
             btn = Data()
             btn.level = i + 1
-            btn.active = Button(path_levels[i], [btn_pos_x, btn_pos_y], command_data=self.__start_level, data=btn.level)
+            btn.active = Button(path_levels[i], [btn_pos_x, btn_pos_y], command_data=self.__start_level, data=btn.level, index=2)
             btn.not_active = Button(path_level_lock, [btn_pos_x, btn_pos_y])
             self.__btn_levels.append(btn)
             btn_pos_x += 220

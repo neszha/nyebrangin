@@ -23,12 +23,12 @@ class GameOver(PopUp):
             Button(
                 'assets/images/buttons/home.png', 
                 [(WIDTH/2) - (bg_size_x/3.5), (HEIGTH/2) + (bg_size_y/2) - 60],
-                command0=self.__to_home
+                command0=self.__to_home, index=2
             ),
             Button(
                 'assets/images/buttons/play-again.png', 
                 [(WIDTH/2) + (bg_size_x/6), (HEIGTH/2) + (bg_size_y/2) - 60],
-                command0=self.__play_again
+                command0=self.__play_again, index=2
             ),
         ]
 
