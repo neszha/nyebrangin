@@ -48,25 +48,15 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony',
+        'name': 'jack', # jack, mark, tony
         'position': [380, 650],
         'destination': [1174, 270]
     },
-    # {
-    #     'name': 'tony',
-    #     'position': [400, 290],
-    #     'destination': [700, 290]
-    # },
-    # {
-    #     'name': 'tony',
-    #     'position': [700, 290],
-    #     'destination': [700, 600]
-    # },
 ]
 
 # Palyer
 player = Data()
-player.name = 'tony'
+player.name = 'tony' # jack, mark, tony
 player.position = [200, 290]
 player.health = 3
 player.speed = 3
