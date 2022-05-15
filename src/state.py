@@ -11,7 +11,7 @@ SOUND_FX = True
 
 ## Level berjalan.
 LEVEL_RESET = False
-LEVEL_RUNNING = 1
+LEVEL_RUNNING = 2
 
 ## Checkpoint.
 CURRENT_LEVEL = 8

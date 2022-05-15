@@ -53,7 +53,7 @@ class Civilian(People):
             self.shadow.fill(pg.Color(255, 0, 0, 200))
             screen.blit(self.shadow, self.rect)
             screen.blit(self.__des_surf, self.__des_rect)
-        if self.show_destination:
+        elif self.show_destination:
             screen.blit(self.__des_surf, self.__des_rect)
             screen.blit(self.shadow, self.rect)
         screen.blit(self.image, self.position)
