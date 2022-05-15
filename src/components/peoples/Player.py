@@ -7,6 +7,8 @@ class Player(People):
     def __init__(self, name, health, position, speed, header, obstacles, cars, civilians):
         super().__init__(name, position)
         self.health = health
+        self.__ghost = False
+        self.__show_character = True
         self.__speed = speed
         self.__header = header
         self.__obstacles = obstacles
@@ -14,7 +16,7 @@ class Player(People):
         self.__civilians = civilians
         self.__object_id = { 'car': 0, 'civilian': 0}
         self.__key_pressed = { 'space': time() }
-        self.__temp = {'speed': speed}
+        self.__temp = {'speed': speed, 'ghost_delay': 0, 'ghost_blit': 0}
 
         self.__header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
@@ -54,13 +56,15 @@ class Player(People):
 
     def __collision_obstacles(self, direction):
         for obstacle in self.__obstacles:
-            if obstacle.rect.colliderect(self.rect):
+            if obstacle.rect.colliderect(self.rect) and not obstacle.is_danger():
                 if direction == 'x':
                     if self.direction.x > 0: self.rect.right = obstacle.rect.left
                     if self.direction.x < 0: self.rect.left = obstacle.rect.right
                 if direction == 'y':
                     if self.direction.y > 0: self.rect.bottom = obstacle.rect.top
                     if self.direction.y < 0: self.rect.top = obstacle.rect.bottom
+            elif obstacle.rect.colliderect(self.rect) and obstacle.is_danger():
+                self.__reduce_health()
 
     def __collision_cars(self):
         for car in self.__cars:
@@ -94,6 +98,9 @@ class Player(People):
                 civilian._animate()
 
     def __reduce_health(self):
+        if self.__ghost: return False
+        self.__ghost = True
+        self.__temp['ghost_delay'] = time() + 2
         self.health -= 1
         self.__header.health = self.health
 
@@ -105,6 +112,17 @@ class Player(People):
             if civilian.rect.colliderect(self.rect): civilian.bring_player = not bring
         self.__key_pressed['space'] = time()
 
+    def __ghost_watch(self):
+        if self.__ghost:
+            delay = self.__temp['ghost_delay'] - time()
+            self.__show_character = False
+            if delay <= 0: 
+                self.__ghost = False
+                self.__show_character = True
+            self.__temp['ghost_blit'] += 1
+            if self.__temp['ghost_blit'] >= 3: self.__show_character = True
+            if self.__temp['ghost_blit'] >= 6: self.__temp['ghost_blit'] = 0
+
     def update(self):
         self.__input_controls()
         self._animate()
@@ -114,5 +132,7 @@ class Player(People):
         self.__follow_me()
 
     def render(self, screen):
-        screen.blit(self.shadow, self.rect)
-        screen.blit(self.image, self.position)
+        self.__ghost_watch()
+        if self.__show_character:
+            screen.blit(self.shadow, self.rect)
+            screen.blit(self.image, self.position)

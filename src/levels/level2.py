@@ -21,8 +21,35 @@ map.forbidden_area = [
 
 # Obstacles.
 obstacle = Data()
-obstacle.list = [
-
+obstacle.list = [  
+    {
+        'image_path': 'assets/images/obstacles/tree.png',
+        'position': [25, 284],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/trunk.png',
+        'position': [248, 556],
+        'scale': 1,
+        'rotation': 16,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [532, 629],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [140, 303],
+        'scale': 1,
+        'rotation': 0,
+        'danger': True,
+    },
 ]
 
 # Cars.
@@ -55,12 +82,12 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [46, 255],
         'destination': [1227, 640]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [266, 640],
         'destination': [1227, 270]
     },

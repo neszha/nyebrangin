@@ -5,8 +5,9 @@ from src.levels.list import levels
 from src.components.Car import Car
 from random import randrange, choice
 from src.components.Audio import Audio
-from src.components.GameHeader import GameHeader
+from src.components.Obstacle import Obstacle
 from src.components.popups.Finish import Finish
+from src.components.GameHeader import GameHeader
 from src.components.peoples.Player import Player
 from src.components.popups.GameOver import GameOver
 from src.components.peoples.Civilian import Civilian
@@ -55,6 +56,11 @@ class Level:
             forbidden_area = ForbiddenArea(size, location, map.forbidden_area_color)
             self.__obstacles.add(forbidden_area)
 
+        obstacles = self.__level.obstacle.list
+        for data in obstacles:
+            obstacle = Obstacle(data['image_path'], data['position'], data['scale'], data['rotation'], data['danger'])
+            self.__obstacles.add(obstacle)
+
     def __load_cars(self, begin=False):
         car = self.__level.car
         [min_car, max_car] = car.traffic_density
@@ -85,7 +91,7 @@ class Level:
         for data in civilians:
             civilian = Civilian(
                 data['name'], data['position'], data['destination'], 
-                self.__header, self.__cars
+                self.__header, self.__cars, self.__obstacles
             )
             self.__civilians.add(civilian)
         self.__civilians.update()

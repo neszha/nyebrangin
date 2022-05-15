@@ -3,7 +3,7 @@ from src.components.People import People
 
 class Civilian(People):
 
-    def __init__(self, name, position, destionation, header, cars):
+    def __init__(self, name, position, destionation, header, cars, obstacles):
         super().__init__(name, position)
         self.show_destination = False
         self.bring_player = False
@@ -11,6 +11,7 @@ class Civilian(People):
         self.__destination = destionation
         self.__header = header
         self.__cars = cars
+        self.__obstacles = obstacles
         self.__object_id = { 'car': 0}
 
         self.__load_componenets()
@@ -32,6 +33,13 @@ class Civilian(People):
                     self.__reset_position()
                     self.__object_id['car'] = id(car)
 
+    def __collision_obstacles(self):
+        for obstacle in self.__obstacles:
+            if obstacle.rect.colliderect(self.rect) and obstacle.is_danger():
+                self.show_destination = False
+                self.bring_player = False
+                self.__reset_position()
+
     def __collotion_destination(self):
         if self.rect.colliderect(self.__des_rect):
             self.__header.civilian -= 1
@@ -47,6 +55,7 @@ class Civilian(People):
         self.__move()
         self.__collision_cars()
         self.__collotion_destination()
+        self.__collision_obstacles()
 
     def render(self, screen):
         if self.bring_player:
