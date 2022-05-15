@@ -17,6 +17,7 @@ from src.components.obstacles.ForbiddenArea import ForbiddenArea
 class Level:
     
     def __init__(self):
+        self.__done = False
         self.__status = 'waiting'
         self.__screen = pg.display.set_mode((WIDTH, HEIGTH))
         self.__background = pg.Surface((WIDTH, HEIGTH))
@@ -98,16 +99,22 @@ class Level:
         self.__waiting_play.open()
 
     def __game_finish_handdle(self):
+        state.SHOW_POPUP = False
         self.__game_finish.set_item('00:00', 3)
         self.__game_finish.open()
+        self.__done = True
+        self.__status = 'game_finish'
 
     def __game_over_handdle(self): 
-        self.__status = 'pause'
+        state.SHOW_POPUP = False
         self.__game_over.open()
+        self.__done = True
+        self.__status = 'game_over'
 
     def __watch_level(self):
+        if self.__done: return True
         if self.__header.civilian <= 0: self.__game_finish_handdle()
-        if self.__player.health <= 0: self.__game_over_handdle()
+        elif self.__player.health <= 0: self.__game_over_handdle()
 
     def __input_keys(self):
         keys = pg.key.get_pressed()
@@ -132,5 +139,5 @@ class Level:
             self.__cars.update()
             self.__civilians.update()
             self.__player.update()
-        else:    
+        elif self.__status == 'waiting' or self.__status == 'pause':    
             self.__waiting_play.render(self.__screen)
