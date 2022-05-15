@@ -30,6 +30,7 @@ class Menu:
         self.__road = pg.image.load('assets/images/menu-road.png').convert()
         self.__text_logo = pg.image.load('assets/images/text-logo.png').convert_alpha()
         self.__arrow_direction = pg.image.load('assets/images/arrow-direction.png').convert_alpha()
+        self.__note_board = pg.image.load('assets/images/note-board.png').convert_alpha()
         self.__cars = []
         self.__clouds = []
         for i in range(4): self.__cars.append(Car('to-left', randrange(2, 6)))            
@@ -41,6 +42,7 @@ class Menu:
         self.__road_rect = self.__road.get_rect(bottomleft = (0, HEIGTH - self.__grass.get_size()[1]))
         self.__text_logo_rect = self.__text_logo.get_rect(center = (WIDTH/2, 138))
         self.__arrow_direction_rect = self.__arrow_direction.get_rect(center = (160, 590))
+        self.__note_board_rect = self.__note_board.get_rect(topleft=(977, 500))
 
         # Load komponen pop-up.
         self.__settings = Settings()
@@ -62,6 +64,7 @@ class Menu:
         for cloud in self.__clouds: cloud.render(self.__screen)
         self.__screen.blit(self.__text_logo, self.__text_logo_rect)
         self.__screen.blit(self.__arrow_direction, self.__arrow_direction_rect)
+        self.__screen.blit(self.__note_board, self.__note_board_rect)
         for btn in self.__buttons: btn.render(self.__screen)
         self.__settings.render(self.__screen)
         self.__box_levels.render(self.__screen)
