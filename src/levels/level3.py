@@ -235,17 +235,17 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [300, 300],
         'destination': [1227, 620]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [780, 300],
         'destination': [1227, 620]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [690, 650],
         'destination': [1227, 270]
     },
@@ -255,7 +255,7 @@ civilian.list = [
         'destination': [1227, 270]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [140, 710],
         'destination': [1227, 270]
     },
