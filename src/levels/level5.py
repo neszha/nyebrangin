@@ -27,7 +27,216 @@ map.forbidden_area = [
 # Obstacles.
 obstacle = Data()
 obstacle.list = [
-    
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position':[285, 693],
+        'scale': 1,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position':[983, 361],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position':[822, 91],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position':[919, 680],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position':[143, 118],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [965, 659],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [596, 75],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [1061, 92],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [237, 694],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/fence.png',
+        'position': [989, 120],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [681, 82],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [663, 82],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [1177, 80],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [1162, 81],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [448, 98],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [617, 684],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [865, 700],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [850, 700],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [1142, 369],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [48, 103],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [110, 83],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [247, 97],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [231, 97],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [204, 684],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [187, 684],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [110, 413],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [155, 371],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [1204, 685],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [1188, 685],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position': [1068, 698],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
 ]
 
 # Cars.
@@ -92,6 +301,6 @@ civilian.list = [
 # Palyer
 player = Data()
 player.name = 'tony' # jack, mark, tony
-player.position = [120, 100]
+player.position = [140, 100]
 player.health = 3
 player.speed = 7
