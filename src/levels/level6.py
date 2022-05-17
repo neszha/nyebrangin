@@ -11,15 +11,14 @@ game.trophy = [
 
 # Map.
 map = Data()
-map.image_path = 'assets/maps/MAP03.png' # Location of game map.
+map.image_path = 'assets/maps/MAP02.png' # Location of game map.
 map.forbidden_area_color = (255, 0, 0, 0) # (R, G, B, A).
 map.forbidden_area = [ 
     # [(size), (location)],
-    [(1282, 54), (0, 0)],
-    [(99, 89), (0, 330)],
-    [(350, 89), (174, 330)],
-    [(350,89), (600, 330)],
-    [(252,89), (1026, 330)],
+    [(1280, 76), (0, 0)],
+    [(102, 76), (0, 360)],
+    [(779, 76), (177, 360)],
+    [(258, 76), (1021, 360)],
     [(75, 718), (-74, 0)],
     [(75, 718), (1280, 0)],
     [(1279, 61), (0, 720)],
@@ -28,7 +27,132 @@ map.forbidden_area = [
 # Obstacles.
 obstacle = Data()
 obstacle.list = [
-    
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [822, 97],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [229, 683],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [136, 363],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [770, 683],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [983, 370],
+        'scale': 0.5,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [899, 78],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [1106, 77],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [1123, 78],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [681, 82],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [453, 98],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [678, 702],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [911, 702],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/wooden-box.png',
+        'position': [448, 98],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position':[509, 78],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position':[1061, 92],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position':[94, 83],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position':[110, 83],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone-block.png',
+        'position':[972, 702],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
 ]
 
 # Cars.
@@ -51,11 +175,11 @@ car.direction = {
     # 'direction': [random range position y]
     'left': [
         [174, 300],
-        [473, 572],
+        #[473, 572],
     ],
     'right': [
         [463, 572],
-        [174, 220],
+        #[174, 220],
     ],
 }
 

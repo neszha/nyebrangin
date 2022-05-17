@@ -28,7 +28,132 @@ map.forbidden_area = [
 # Obstacles.
 obstacle = Data()
 obstacle.list = [
-    
+    {
+        'image_path': 'assets/images/obstacles/puddle.png',
+        'position': [75, 300],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/puddle.png',
+        'position': [337, 418],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/puddle.png',
+        'position': [168, 64],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/chopped.png',
+        'position': [1114, 415],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/chopped.png',
+        'position': [830, 673],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [145, 424],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/hole.png',
+        'position': [1110, 692],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': True,
+    },
+    {
+        'image_path': 'assets/images/obstacles/gravel.png',
+        'position': [423, 673],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/gravel.png',
+        'position': [1012, 55],
+        'scale': 0.6,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [1108, 52],
+        'scale': 0.6,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [903, 422],
+        'scale': 0.6,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [641, 66],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [42, 691],
+        'scale': 0.6,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/stone.png',
+        'position': [572, 285],
+        'scale': 0.8,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/tree.png',
+        'position': [362, 26],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/tree.png',
+        'position': [1059, 384],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/tree.png',
+        'position': [661, 384],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
+    {
+        'image_path': 'assets/images/obstacles/tree.png',
+        'position': [887, 13],
+        'scale': 1,
+        'rotation': 0,
+        'danger': False,
+    },
 ]
 
 # Cars.
