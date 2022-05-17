@@ -1,3 +1,4 @@
+from turtle import pos
 import pygame as pg
 from src.config import *
 

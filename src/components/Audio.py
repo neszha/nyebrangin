@@ -32,7 +32,7 @@ class Audio:
     def play(self, loops=False):
         self.set_volume()
         self.__audio.play(loops)
-
+        
     def stop(self):
         self.__audio.stop()
         

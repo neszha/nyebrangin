@@ -1,6 +1,7 @@
 import pygame as pg
 from time import time
 from src.components.People import People
+from src.components.Audio import Audio
 
 class Player(People):
 
@@ -21,20 +22,26 @@ class Player(People):
         self.__header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
 
+
     def __input_controls(self):
+        self.footstep_fx = Audio('assets/audios/effects/footsteps-cut.mp3', 'sound_fx')
         keys = pg.key.get_pressed()
         if keys[pg.K_UP]:
+            self.footstep_fx.play()
             self.direction.y = -1
             self.direction_status = 'up'
         elif keys[pg.K_DOWN]:
+            self.footstep_fx.play()
             self.direction.y = 1
             self.direction_status = 'down'
         else: self.direction.y = 0
             
         if keys[pg.K_RIGHT]:
+            self.footstep_fx.play()
             self.direction.x = 1
             self.direction_status = 'right'
         elif keys[pg.K_LEFT]:
+            self.footstep_fx.play()
             self.direction.x = -1
             self.direction_status = 'left'
         else: self.direction.x = 0
@@ -53,7 +60,7 @@ class Player(People):
         self.rect.y += self.direction.y * self.__speed
         self.__collision_obstacles('y')
         self.position = [self.rect.x - 17, self.rect.y - 50]
-
+        
     def __collision_obstacles(self, direction):
         for obstacle in self.__obstacles:
             if obstacle.rect.colliderect(self.rect) and not obstacle.is_danger():
@@ -70,6 +77,8 @@ class Player(People):
         for car in self.__cars:
             if car.rect.colliderect(self.rect):
                 if self.__object_id['car'] != id(car):
+                    self.car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx')
+                    self.car_hit_fx.play()
                     print(f'Player ditabrak mobil {id(car)}')
                     self.__reduce_health()
                     self.__object_id['car'] = id(car)

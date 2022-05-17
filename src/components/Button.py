@@ -1,6 +1,8 @@
+from asyncore import loop
 from time import time
 import pygame as pg
 import src.state as state
+from src.components.Audio import Audio
 
 press_delay = 0.3 # Second.
 temp_time = time()
@@ -29,6 +31,9 @@ class Button:
         if self.__hovered and pg.mouse.get_pressed()[0] and not self.__clicked:
             if (time() - temp_time) < press_delay: return False
             temp_time = time()
+            self.click_fx = Audio('assets/audios/effects/click.wav', 'sound_fx')
+            self.click_fx.play()
+            print('click')
             self.__clicked = True
             if self.__command0: self.__command0()
             if self.__command1: self.__command1()

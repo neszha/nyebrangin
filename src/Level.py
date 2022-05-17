@@ -81,6 +81,8 @@ class Level:
                 if direction == 'right': position[0] = randrange(WIDTH + 120, WIDTH + 1000)
                 else: position[0] = randrange(-1000, -50)
             self.__cars.add(Car(path, position, direction, speed))
+            self.horn_fx = Audio('assets/audios/effects/car-horn.mp3', 'sound_fx')
+            self.horn_fx.play()
         if len(self.__cars) < min_car: self.__load_cars()
     
     def __load_player(self):
@@ -121,12 +123,16 @@ class Level:
                 trophy = item['trophy']
         self.__game_finish.set_item(dt.timedelta(seconds=cd), trophy)
         self.__game_finish.open()
+        self.finish_fx = Audio('assets/audios/effects/finish.mp3', 'sound_fx')
+        self.finish_fx.play()
         self.__done = True
         self.__status = 'game_finish'
 
     def __game_over_handdle(self): 
         state.SHOW_POPUP = False
         self.__game_over.open()
+        self.game_over_fx = Audio('assets/audios/effects/game-over.mp3', 'sound_fx')
+        self.game_over_fx.play()
         self.__done = True
         self.__status = 'game_over'
 
