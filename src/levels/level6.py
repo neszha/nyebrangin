@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60 # Seconds.
+game.coutdown = 400 # Seconds.
 game.trophy = [
     { 'time_left': 45, 'trophy': 3 },
     { 'time_left': 25, 'trophy': 2 },
@@ -121,14 +121,14 @@ obstacle.list = [
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position':[509, 78],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position':[1061, 92],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
@@ -187,12 +187,17 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [356, 710],
-        'destination': [1252, 100]
+        'name': 'mark', # jack, mark, tony
+        'position': [356, 140],
+        'destination': [140, 420]
+    },
+     {
+        'name': 'jack', # jack, mark, tony
+        'position': [747, 100],
+        'destination': [140, 420]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [978, 420],
         'destination': [1252, 100]
     },
@@ -202,12 +207,12 @@ civilian.list = [
         'destination': [1252, 100]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [539, 710],
         'destination': [1252, 100]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [1120, 710],
         'destination': [1252, 100]
     },
@@ -217,6 +222,6 @@ civilian.list = [
 # Palyer
 player = Data()
 player.name = 'tony' # jack, mark, tony
-player.position = [120, 100]
+player.position = [150, 100]
 player.health = 3
 player.speed = 8
