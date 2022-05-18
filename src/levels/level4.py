@@ -36,8 +36,8 @@ obstacle.list = [
     },
     {
         'image_path': 'assets/images/obstacles/hole.png',
-        'position':[978, 366],
-        'scale': 0.6,
+        'position':[995, 375],
+        'scale': 0.5,
         'rotation': 0,
         'danger': True,
     },

@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60 # Seconds.
+game.coutdown = 360 # Seconds.
 game.trophy = [
     { 'time_left': 45, 'trophy': 3 },
     { 'time_left': 25, 'trophy': 2 },
@@ -271,12 +271,12 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [356, 710],
-        'destination': [1252, 100]
+        'name': 'mark', # jack, mark, tony
+        'position': [356, 140],
+        'destination': [140, 390]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [978, 420],
         'destination': [1252, 100]
     },
@@ -286,7 +286,7 @@ civilian.list = [
         'destination': [1252, 100]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [539, 710],
         'destination': [1252, 100]
     },
@@ -301,6 +301,6 @@ civilian.list = [
 # Palyer
 player = Data()
 player.name = 'tony' # jack, mark, tony
-player.position = [140, 100]
+player.position = [100, 100]
 player.health = 3
 player.speed = 7
