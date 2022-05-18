@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60 # Seconds.
+game.coutdown = 500 # Seconds.
 game.trophy = [
     { 'time_left': 45, 'trophy': 3 },
     { 'time_left': 25, 'trophy': 2 },
@@ -175,12 +175,12 @@ car.speed_range = [30, 60]
 car.direction = {
     # 'direction': [random range position y]
     'left': [
-        [174, 300],
-        [473, 572],
+        [104, 227],
+       # [473, 572],
     ],
     'right': [
         [463, 572],
-        [174, 220],
+       # [174, 220],
     ],
 }
 
@@ -188,29 +188,29 @@ car.direction = {
 civilian = Data()
 civilian.list = [
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [356, 710],
-        'destination': [1252, 100]
+        'name': 'mark', # jack, mark, tony
+        'position': [1161, 90],
+        'destination': [975, 430]
     },
     {
         'name': 'tony', # jack, mark, tony
         'position': [978, 420],
-        'destination': [1252, 100]
+        'destination': [1252, 70]
     },
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [50, 710],
-        'destination': [1252, 100]
+        'name': 'jack', # jack, mark, tony
+        'position': [382, 440],
+        'destination': [1252, 70]
     },
     {
         'name': 'tony', # jack, mark, tony
         'position': [539, 710],
-        'destination': [1252, 100]
+        'destination': [1252, 70]
     },
     {
         'name': 'tony', # jack, mark, tony
         'position': [1120, 710],
-        'destination': [1252, 100]
+        'destination': [1252, 70]
     },
 
 ]
