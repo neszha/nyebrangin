@@ -29,36 +29,36 @@ obstacle = Data()
 obstacle.list = [
     {
         'image_path': 'assets/images/obstacles/hole.png',
-        'position':[839, 80],
-        'scale': 1,
+        'position':[839, 92],
+        'scale': 0.6,
         'rotation': 0,
         'danger': True,
     },
     {
         'image_path': 'assets/images/obstacles/hole.png',
-        'position':[975, 369],
-        'scale': 1,
+        'position':[978, 366],
+        'scale': 0.6,
         'rotation': 0,
         'danger': True,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [1061, 92],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [237, 694],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [963, 658],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
@@ -225,6 +225,6 @@ civilian.list = [
 # Palyer
 player = Data()
 player.name = 'tony' # jack, mark, tony
-player.position = [120, 100]
+player.position = [150, 100]
 player.health = 3
 player.speed = 6
