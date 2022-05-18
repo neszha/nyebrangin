@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60 * 2 # Seconds.
+game.coutdown = 560 * 2 # Seconds.
 game.trophy = [
     { 'time_left': 45, 'trophy': 3 },
     { 'time_left': 25, 'trophy': 2 },
@@ -273,35 +273,35 @@ civilian = Data()
 civilian.list = [
     {
         'name': 'tony', # jack, mark, tony
-        'position': [356, 710],
-        'destination': [1252, 100]
+        'position': [590, 90],
+        'destination': [975, 430]
     },
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [978, 420],
-        'destination': [1252, 100]
+        'name': 'jack', # jack, mark, tony
+        'position': [540, 400],
+        'destination': [1252, 70]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'mark', # jack, mark, tony
         'position': [50, 710],
-        'destination': [1252, 100]
+        'destination': [1252, 70]
     },
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [539, 710],
-        'destination': [1252, 100]
+        'name': 'jack', # jack, mark, tony
+        'position': [850, 710],
+        'destination': [1252, 70]
     },
     {
-        'name': 'tony', # jack, mark, tony
-        'position': [1120, 710],
-        'destination': [1252, 100]
+        'name': 'mark', # jack, mark, tony
+        'position': [850, 330],
+        'destination': [1252, 70]
     },
 
 ]
 
 # Palyer
 player = Data()
-player.name = 'jack' # jack, mark, tony
+player.name = 'tony' # jack, mark, tony
 player.position = [120, 100]
 player.health = 3
 player.speed = 8
