@@ -141,15 +141,15 @@ obstacle.list = [
     },
     {
         'image_path': 'assets/images/obstacles/hole.png',
-        'position': [996, 628],
-        'scale': 1,
+        'position': [996, 635],
+        'scale': 0.8,
         'rotation': 0,
         'danger': True,
     },
     {
         'image_path': 'assets/images/obstacles/hole.png',
-        'position': [140, 303],
-        'scale': 1,
+        'position': [145, 303],
+        'scale': 0.7,
         'rotation': 0,
         'danger': True,
     },
@@ -177,28 +177,28 @@ obstacle.list = [
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [606, 272],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [416, 245],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [561, 610],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
     {
         'image_path': 'assets/images/obstacles/stone.png',
         'position': [831, 244],
-        'scale': 1,
+        'scale': 0.5,
         'rotation': 0,
         'danger': False,
     },
@@ -250,14 +250,14 @@ civilian.list = [
         'destination': [1227, 270]
     },
     {
-        'name': 'tony', # jack, mark, tony
+        'name': 'jack', # jack, mark, tony
         'position': [1170, 650],
         'destination': [1227, 270]
     },
     {
         'name': 'jack', # jack, mark, tony
         'position': [140, 710],
-        'destination': [1227, 270]
+        'destination': [28, 270]
     },
 ]
 
