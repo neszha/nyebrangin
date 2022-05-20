@@ -301,6 +301,6 @@ civilian.list = [
 # Palyer
 player = Data()
 player.name = 'tony' # jack, mark, tony
-player.position = [100, 100]
+player.position = [100, 150]
 player.health = 3
 player.speed = 7
