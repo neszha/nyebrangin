@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 240 # Seconds.
+game.coutdown = 145 # Seconds.
 game.trophy = [
     { 'time_left': 45, 'trophy': 3 },
     { 'time_left': 25, 'trophy': 2 },
@@ -236,7 +236,7 @@ civilian = Data()
 civilian.list = [
     {
         'name': 'mark', # jack, mark, tony
-        'position': [300, 300],
+        'position': [280, 300],
         'destination': [1227, 620]
     },
     {
