@@ -47,8 +47,8 @@ class Main:
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     self.menu.exit()
-                if event.type == pg.MOUSEMOTION:
-                    print(pg.mouse.get_pos())
+                # if event.type == pg.MOUSEMOTION:
+                #     # print(pg.mouse.get_pos())
             
             # Update tampilan game.
             self.__watch_page_change()

@@ -105,7 +105,6 @@ class Level:
     def __start(self):
         self.__status = 'running'
         self.__timing['start'] = time()
-        print(self.__timing)
 
     def __pause(self):
         self.__status = 'pause'
@@ -121,7 +120,7 @@ class Level:
                 trophy = item['trophy']
         self.__game_finish.set_item(dt.timedelta(seconds=cd), trophy)
         self.__game_finish.open()
-        self.finish_fx = Audio('assets/audios/effects/finish.mp3', 'sound_fx')
+        self.finish_fx = Audio('assets/audios/effects/finish.mp3', 'sound_fx', 0.4)
         self.finish_fx.play()
         self.__done = True
         self.__status = 'game_finish'
@@ -129,7 +128,7 @@ class Level:
     def __game_over_handdle(self): 
         state.SHOW_POPUP = False
         self.__game_over.open()
-        self.game_over_fx = Audio('assets/audios/effects/game-over.mp3', 'sound_fx')
+        self.game_over_fx = Audio('assets/audios/effects/game-over.mp3', 'sound_fx', 0.4)
         self.game_over_fx.play()
         self.__done = True
         self.__status = 'game_over'

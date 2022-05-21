@@ -1,4 +1,5 @@
 import pygame as pg
+from src.components.Audio import Audio
 from src.components.People import People
 
 class Civilian(People):
@@ -19,6 +20,8 @@ class Civilian(People):
     def __load_componenets(self):
         self.__des_surf = pg.image.load('assets/images/civilian-destination.png').convert_alpha()
         self.__des_rect = self.__des_surf.get_rect(center=self.__destination)
+        self.__des_fx = Audio('assets/audios/effects/click.wav', 'sound_fx', 0.2)
+        self.__car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx', 0.3)
     
     def __move(self):
         self.position = [self.rect.x - 17, self.rect.y - 50]
@@ -31,6 +34,7 @@ class Civilian(People):
                     self.bring_player = False
                     self.__reset_position()
                     self.__object_id['car'] = id(car)
+                    self.__car_hit_fx.play()
 
     def __collision_obstacles(self):
         for obstacle in self.__obstacles:
@@ -42,6 +46,7 @@ class Civilian(People):
     def __collotion_destination(self):
         if self.rect.colliderect(self.__des_rect):
             self.__header.civilian -= 1
+            self.__des_fx.play()
             self.kill()
 
     def __reset_position(self): 

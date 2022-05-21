@@ -1,4 +1,3 @@
-from asyncore import loop
 from time import time
 import pygame as pg
 import src.state as state

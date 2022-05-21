@@ -19,7 +19,8 @@ class Player(People):
         self.__key_pressed = { 'space': time() }
         self.__temp = {'speed': speed, 'ghost_delay': 0, 'ghost_blit': 0, 'footstep_fx': time()}
 
-        self.footstep_fx = Audio('assets/audios/effects/footsteps.mp3', 'sound_fx', 0.4)
+        self.__footstep_fx = Audio('assets/audios/effects/footsteps.mp3', 'sound_fx', 0.4)
+        self.__car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx', 0.3)
         self.__header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
 
@@ -63,7 +64,7 @@ class Player(People):
 
     def __footstep(self):
         if  time() - self.__temp['footstep_fx'] > 0.8:
-            self.footstep_fx.play()
+            self.__footstep_fx.play()
             self.__temp['footstep_fx'] = time()
         
     def __collision_obstacles(self, direction):
@@ -82,8 +83,7 @@ class Player(People):
         for car in self.__cars:
             if car.rect.colliderect(self.rect):
                 if self.__object_id['car'] != id(car):
-                    self.car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx')
-                    self.car_hit_fx.play()
+                    self.__car_hit_fx.play()
                     self.__reduce_health()
                     self.__object_id['car'] = id(car)
 

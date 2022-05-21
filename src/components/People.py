@@ -35,7 +35,6 @@ class People(pg.sprite.Sprite, ABC):
         if self.last_position != self.position: self.frame_index += 1
         if self.frame_index >= len(images): self.frame_index = 0
         self.last_position = self.position
-        # print(self.last_position, self.position, self.frame_index)
 
     # @abstractmethod
     # def update(self):

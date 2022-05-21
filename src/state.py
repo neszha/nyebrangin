@@ -1,6 +1,6 @@
 ## Navigasi menu.
 PAGE = 'menu' # menu|geme-run|loading-screen
-PAGE = 'game-run'
+# PAGE = 'game-run'
 
 ## Status menampilkan fitur popup.
 SHOW_POPUP = False
