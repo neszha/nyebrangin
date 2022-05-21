@@ -17,33 +17,33 @@ class Player(People):
         self.__civilians = civilians
         self.__object_id = { 'car': 0, 'civilian': 0}
         self.__key_pressed = { 'space': time() }
-        self.__temp = {'speed': speed, 'ghost_delay': 0, 'ghost_blit': 0}
+        self.__temp = {'speed': speed, 'ghost_delay': 0, 'ghost_blit': 0, 'footstep_fx': time()}
 
+        self.footstep_fx = Audio('assets/audios/effects/footsteps.mp3', 'sound_fx', 0.4)
         self.__header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
 
 
     def __input_controls(self):
-        self.footstep_fx = Audio('assets/audios/effects/footsteps-cut.mp3', 'sound_fx')
         keys = pg.key.get_pressed()
         if keys[pg.K_UP]:
-            self.footstep_fx.play()
             self.direction.y = -1
             self.direction_status = 'up'
+            self.__footstep()
         elif keys[pg.K_DOWN]:
-            self.footstep_fx.play()
             self.direction.y = 1
             self.direction_status = 'down'
+            self.__footstep()
         else: self.direction.y = 0
             
         if keys[pg.K_RIGHT]:
-            self.footstep_fx.play()
             self.direction.x = 1
             self.direction_status = 'right'
+            self.__footstep()
         elif keys[pg.K_LEFT]:
-            self.footstep_fx.play()
             self.direction.x = -1
             self.direction_status = 'left'
+            self.__footstep()
         else: self.direction.x = 0
 
         if keys[pg.K_SPACE]: self.__bring_civilian_collapse()
@@ -60,6 +60,11 @@ class Player(People):
         self.rect.y += self.direction.y * self.__speed
         self.__collision_obstacles('y')
         self.position = [self.rect.x - 17, self.rect.y - 50]
+
+    def __footstep(self):
+        if  time() - self.__temp['footstep_fx'] > 0.8:
+            self.footstep_fx.play()
+            self.__temp['footstep_fx'] = time()
         
     def __collision_obstacles(self, direction):
         for obstacle in self.__obstacles:
@@ -79,7 +84,6 @@ class Player(People):
                 if self.__object_id['car'] != id(car):
                     self.car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx')
                     self.car_hit_fx.play()
-                    print(f'Player ditabrak mobil {id(car)}')
                     self.__reduce_health()
                     self.__object_id['car'] = id(car)
 

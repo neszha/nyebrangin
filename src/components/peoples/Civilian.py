@@ -27,7 +27,6 @@ class Civilian(People):
         for car in self.__cars:
             if car.rect.colliderect(self.rect):
                 if self.__object_id['car'] != id(car):
-                    print(f'Civilian ditabrak mobil {id(car)}')
                     self.show_destination = False
                     self.bring_player = False
                     self.__reset_position()
