@@ -81,8 +81,6 @@ class Level:
                 if direction == 'right': position[0] = randrange(WIDTH + 120, WIDTH + 1000)
                 else: position[0] = randrange(-1000, -50)
             self.__cars.add(Car(path, position, direction, speed))
-            self.horn_fx = Audio('assets/audios/effects/car-horn.mp3', 'sound_fx')
-            self.horn_fx.play()
         if len(self.__cars) < min_car: self.__load_cars()
     
     def __load_player(self):
