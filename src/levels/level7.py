@@ -209,7 +209,7 @@ civilian.list = [
     },
     {
         'name': 'tony', # jack, mark, tony
-        'position': [1150, 710],
+        'position': [1250, 710],
         'destination': [1252, 70]
     },
 
