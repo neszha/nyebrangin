@@ -10,12 +10,15 @@ Player mendapatkan poin saat menjalankan misi dengan durasi waktu tertentu.
 
 Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat yang dapat dilihat dari kecepatan kendaraan mobil yang berjalan.
 
-## Dependensi Paket (library) Game 
+## Dependensi Paket (library) 
 
-- Pygame 
-- Random
+- pygame 
+- random
+- os
+- datetime
+- json
 
-## Cara menjalankan Game (cara bermain) 
+## Cara menjalankan Game (Cara Bermain) 
 
 1. Menampilkan menu home : 
     - Start 
