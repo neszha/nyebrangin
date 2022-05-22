@@ -32,6 +32,8 @@ class Level:
         self.__cars = pg.sprite.Group()
         self.__civilians = pg.sprite.Group()
         self.__timing = { 'countdown': 0, 'start': 0}
+        self.__finish_fx = Audio('assets/audios/effects/finish.mp3', 'sound_fx', 0.4)
+        self.__game_over_fx = Audio('assets/audios/effects/game-over.mp3', 'sound_fx', 0.4)
 
         self.__setup_level()
         self.__load_map()
@@ -120,16 +122,14 @@ class Level:
                 trophy = item['trophy']
         self.__game_finish.set_item(dt.timedelta(seconds=cd), trophy)
         self.__game_finish.open()
-        self.finish_fx = Audio('assets/audios/effects/finish.mp3', 'sound_fx', 0.4)
-        self.finish_fx.play()
+        self.__finish_fx.play()
         self.__done = True
         self.__status = 'game_finish'
 
     def __game_over_handdle(self): 
         state.SHOW_POPUP = False
         self.__game_over.open()
-        self.game_over_fx = Audio('assets/audios/effects/game-over.mp3', 'sound_fx', 0.4)
-        self.game_over_fx.play()
+        self.__game_over_fx.play()
         self.__done = True
         self.__status = 'game_over'
 

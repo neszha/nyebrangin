@@ -1,5 +1,6 @@
 import src.state as state
 from src.config import *
+from src.Store import Store
 from src.components.Text import Text
 from src.components.PopUp import PopUp
 from src.components.Button import Button
@@ -10,6 +11,7 @@ class Finish(PopUp):
     def __init__(self):
         self.__time_left = '00:00'
         self.__trophy_number = 1
+        self.__store = Store()
         super().__init__('FINISH!', 'assets/images/backgrounds/end.png', False)
         self.__load_local_componenets()
 
@@ -46,6 +48,7 @@ class Finish(PopUp):
 
     def __next_level(self): 
         state.PAGE = 'menu'
+        self.__store.save_checkpoint(self.__time_left, self.__trophy_number)
         state.LEVEL_RUNNING += 1
         if state.LEVEL_RUNNING > state.MAX_LEVEL:
             state.LEVEL_RUNNING = state.MAX_LEVEL

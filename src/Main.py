@@ -3,6 +3,7 @@ import src.state as state
 from src.config import *
 from src.Menu import Menu
 from src.Level import Level
+from src.Store import Store
 
 class Main:
 
@@ -16,6 +17,10 @@ class Main:
         pg.mixer.init() 
         pg.display.set_caption(self.__game_name)
         self.clock = pg.time.Clock()
+
+        # Load file temporary.
+        store = Store()
+        store.load_checkpoints()
 
     def __watch_page_change(self):
         if state.PAGE == 'menu':
