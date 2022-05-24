@@ -189,7 +189,7 @@ civilian = Data()
 civilian.list = [
     {
         'name': 'mark', # jack, mark, tony
-        'position': [1161, 90],
+        'position': [1161, 70],
         'destination': [975, 430]
     },
     {
