@@ -56,7 +56,7 @@ class Finish(PopUp):
     def set_item(self, time_left, trophy_number):
         self.__time_left = time_left
         self.__trophy_number = trophy_number
-        self.__load_local_componenets()
+        self._load_local_components()
 
     def render(self, screen):
         if self._show:

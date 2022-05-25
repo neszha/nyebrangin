@@ -4,8 +4,8 @@ class Data: pass
 game = Data()
 game.coutdown = 145 # Seconds.
 game.trophy = [
-    { 'time_left': 45, 'trophy': 3 },
-    { 'time_left': 25, 'trophy': 2 },
+    { 'time_left': 100, 'trophy': 3 },
+    { 'time_left': 60, 'trophy': 2 },
     { 'time_left': 1, 'trophy': 1 },
 ]
 
@@ -202,7 +202,6 @@ obstacle.list = [
         'rotation': 0,
         'danger': False,
     },
-    
 ]
 
 # Cars.
@@ -219,8 +218,8 @@ car.use = [
     # 'assets/images/cars/vertical/9.png',
     # 'assets/images/cars/vertical/10.png',
 ]
-car.traffic_density = [4, 7]
-car.speed_range = [20, 40]
+car.traffic_density = [3, 6]
+car.speed_range = [15, 35]
 car.direction = {
     # 'direction': [random range position y]
     'left': [
@@ -266,4 +265,4 @@ player = Data()
 player.name = 'tony' # jack, mark, tony
 player.position = [200, 290]
 player.health = 3
-player.speed = 5
+player.speed = 4

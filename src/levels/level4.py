@@ -2,10 +2,10 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 60 * 2 + 30 # Seconds.
+game.coutdown = 150 # Seconds.
 game.trophy = [
-    { 'time_left': 45, 'trophy': 3 },
-    { 'time_left': 25, 'trophy': 2 },
+    { 'time_left': 130, 'trophy': 3 },
+    { 'time_left': 60, 'trophy': 2 },
     { 'time_left': 1, 'trophy': 1 },
 ]
 
@@ -227,4 +227,4 @@ player = Data()
 player.name = 'tony' # jack, mark, tony
 player.position = [150, 100]
 player.health = 3
-player.speed = 6
+player.speed = 5
