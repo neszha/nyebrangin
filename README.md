@@ -1,4 +1,4 @@
-# NYEBRANGIN - GAME BY PULANGMEN
+# PYTHON GAME BY PULANGMEN
 
 <img src="docs/text-logo.png" width="100%">
 
@@ -59,7 +59,7 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 ## UML Class Diagram
 <img src="docs/uml-class.png" width="800">
 
-## Pengembangan Game
+## Pengembang Game
  
 | KELOMPOK : RB05 - PULANGMEN |
 | ---------------- |
