@@ -1,52 +1,60 @@
 # NYEBRANGIN - GAME BY PULANGMEN
 
 ## Deskripsi Game
+Game `nyebrangin` menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
 
-Game menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
+Player memiliki beberapa kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan atau jatuh ke dalam lubang. Misi utama seorang player yaitu membantu civilian yang ingin menyebrang dalam durasi waktu tertentu untuk dapat ke level yang lebih tinggi. Semakin tinggi tingkatan level, maka tingkat kesulitan juga akan semakin tinggi.
 
-Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan. 
+## Dependensi Paket (Library) 
+- pygame: Library utama untuk menjalankan game di python.
+- random: Library untuk menghandle fungsi-fungsi yang bersifat random. 
+- os: Library ini digunakan unuk berintraksi dengen sistem operasi.
+- datetime: Library ini digunakan untuk menggenerate data waktu.
+- json: Library ini digunakan unuk mengelola data dengen tipe data JSON.
 
-Player mendapatkan poin saat menjalankan misi dengan durasi waktu tertentu. 
+## Menjalankan Game
+Sebelum menjalankan game, pastikan semua paket atau library sudah terinstall:
 
-Setiap tingkatan level memiliki tingkat kesulitan game yang semakin meningkat yang dapat dilihat dari kecepatan kendaraan mobil yang berjalan.
+```
+# pip install pygame
+# pip3 install pygame (alternative command)
+```
+Perintah untuk menjalankan game:
+```
+# python nyebrangin.py
+# python3 nyebrangin.py (alternative command)
+# py nyebrangin.py (alternative command)
+```
 
-## Dependensi Paket (library) 
+## Cara Bermain 
 
-- pygame 
-- random
-- os
-- datetime
-- json
+<img src="docs/menu.png" width="100%"> 
+<img src="docs/01-level-list.png" width="100%"> 
 
-## Cara menjalankan Game (Cara Bermain) 
+Setelah game dijalankan, maka akan muncul tampilan menu utama seperti gambar di atas. Setelah itu, klik tombol `Start` untuk membuka daftar level yang tersedia. Setelah itu, pilih tingkatan level yang ingin dimainkan.
 
-1. Menampilkan menu home : 
-    - Start 
-    - Exit
+<img src="docs/game-run.png" width="100%"> 
 
-    <br />
-    <img src="docs/menu.jpeg" width="500">
+Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrangi jalan ke tujuan tertentu. Player harus menyelasaikan misi tersebut dalam jangka waktu tertentu. Jika waktu atau nyawa player habis, maka game akan bergenti dan akan menampilkan popup `Game Over`. Jika misi telah selesai, maka game akan menampilkan popup `Game Finish` dan player berhak untuk dapat memainkan game di level berikutnya.  
 
-2. Terdapat pilihan tingkat kesulitan (level) Game.
+<img src="docs/game-finish.png" width="100%"> 
+<img src="docs/02-level-list.png" width="100%"> 
 
-3. Masuk ke dalam Game berdasarkan pilihan Level.
+## Ketentuan Game
+- Nyawa player akan berkurang jika player jatuh ke lubang atau ditabrak oleh kendaraan yang sedang melintas. Pada kondisi ini player sedang membawa civilian, maka civilian akan kembali ke poisis awal.
+- Civilian akan kembali ke poisis awal jika ia ditabrak oleh kendaraan atau masuk ke dalam lubang.
+- Tujuan civilian akan terlihat jika player menyentuh civilian.
+- Level selanjutnya akan terbuka jika telah menyelesaikan misi pada level tersebut.
+- Game Over: Terjadi apabila durasi hitungan mundur telah habis atau player kehabisan nyawa.
+- Game Finish: Terjadi apabila semua civilian berhasil sampai ke tujian dengen durasi waktu dan nyawa player yang masih tersisa.
 
-4. Pada Game play terdapat Mobil yang berjalan,Player, dan Civillian.
+## Kontrol Game
+- Control pergerakan player: Mengunakan control key (atas, bawah, kanan, dan kiri).
+- Mode berjalan: Secara default, pergerakan player berapa pada mode run. Mode berjalan diaktifkan dengen menekan tombol <code>w</code>.
+- Membawa atau melepas civilian: Dekati civilian dan tekan tombol <code>SPACE</code> untuk mulai membawa civilian. Selain itu, tombol <code>SPACE</code> juga digunakan untuk melepas civilian.
+- Game Pause: <code>SPACE</code> digunakan untuk menghentikan game sementara.
 
-5. Mulai permainan dengan menjalankan player kearah civillian dan membantunya.
-
-6. Jalankan misi untuk menyebrangkan civilian hingga selesai.
-
-7. Player memiliki 3 kali kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan.
-
-8. Jika player berhasil menyebrangkan para civilian pada level pertama, game akan berlanjut ke level seterusnya.
-
-9. Jika player sudah menjalani di semua level, maka game selesai.
-
-10. GAME SELESAI dan Menampilkan hasil Skor.
-
-## UML Class Diagram Game
-<br />
+## UML Class Diagram
 <img src="docs/UML Class Final - Nyebrangin.png" width="800">
 
 ## Kontributor Pengembangan Game
