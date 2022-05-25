@@ -16,7 +16,7 @@ LEVEL_RUNNING = 1
 ## Checkpoint.
 CURRENT_LEVEL = 1
 MAX_LEVEL = 8
-OPEN_ALL_LEVEL = True
+OPEN_ALL_LEVEL = False
 CHECKPOINTS = [
     {
         'level': 1,
