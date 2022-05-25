@@ -5,7 +5,7 @@ Game `nyebrangin` menggambarkan tentang player yang ingin membantu civillian unt
 
 Player memiliki beberapa kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan atau jatuh ke dalam lubang. Misi utama seorang player yaitu membantu civilian yang ingin menyebrang dalam durasi waktu tertentu untuk dapat ke level yang lebih tinggi. Semakin tinggi tingkatan level, maka tingkat kesulitan juga akan semakin tinggi.
 
-## Dependensi Paket (Library) 
+## Dependensi Paket
 - pygame: Library utama untuk menjalankan game di python.
 - random: Library untuk menghandle fungsi-fungsi yang bersifat random. 
 - os: Library ini digunakan unuk berintraksi dengen sistem operasi.
@@ -55,14 +55,14 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 - `esc`: Digunakan untuk menghentikan game sementara.
 
 ## UML Class Diagram
-<img src="docs/UML Class Final - Nyebrangin.png" width="800">
+<img src="docs/uml-class.png" width="800">
 
-## Kontributor Pengembangan Game
+## Pengembangan Game
  
- | KELOMPOK : PULANGMEN - RB05 |
+| KELOMPOK : RB05 - PULANGMEN |
 | ---------------- |
 
-| NIM  | Nama | As |
+| NIM  | Nama | Sebagai |
 | ----- | --- | --- |
 | 120140043  | Irsan Romardi Harahap  | Leader and Tester |
 | 120140149  | Dewi Anggraini  | Level Designer |
