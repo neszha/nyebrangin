@@ -2,6 +2,7 @@ import json
 import src.state as state
 from os import path, mkdir
 
+# Menyediakan fungsi-fungsi untuk mengelola data temporary.
 class Store: 
     
     def __init__(self):

@@ -2,42 +2,34 @@ import pygame as pg
 from src.components.Audio import Audio
 from src.components.People import People
 
+# Membuat karakter civilian.
 class Civilian(People):
 
     def __init__(self, name, position, destionation, header, cars, obstacles):
-        super().__init__(name, position)
+        super().__init__(name, position, cars, obstacles, header)
         self.show_destination = False
         self.bring_player = False
         self.__position = position
         self.__destination = destionation
-        self.__header = header
-        self.__cars = cars
-        self.__obstacles = obstacles
-        self.__object_id = { 'car': 0}
-
         self.__load_componenets()
 
     def __load_componenets(self):
         self.__des_surf = pg.image.load('assets/images/civilian-destination.png').convert_alpha()
         self.__des_rect = self.__des_surf.get_rect(center=self.__destination)
         self.__des_fx = Audio('assets/audios/effects/click.wav', 'sound_fx', 0.2)
-        self.__car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx', 0.3)
-    
-    def __move(self):
-        self.position = [self.rect.x - 17, self.rect.y - 50]
 
-    def __collision_cars(self):
-        for car in self.__cars:
+    def _collision_cars(self):
+        for car in self._cars:
             if car.rect.colliderect(self.rect):
-                if self.__object_id['car'] != id(car):
+                if self._object_id['car'] != id(car):
                     self.show_destination = False
                     self.bring_player = False
                     self.__reset_position()
-                    self.__object_id['car'] = id(car)
-                    self.__car_hit_fx.play()
+                    self._object_id['car'] = id(car)
+                    self._car_hit_fx.play()
 
-    def __collision_obstacles(self):
-        for obstacle in self.__obstacles:
+    def _collision_obstacles(self):
+        for obstacle in self._obstacles:
             if obstacle.rect.colliderect(self.rect) and obstacle.is_danger():
                 self.show_destination = False
                 self.bring_player = False
@@ -45,7 +37,7 @@ class Civilian(People):
 
     def __collotion_destination(self):
         if self.rect.colliderect(self.__des_rect):
-            self.__header.civilian -= 1
+            self._header.civilian -= 1
             self.__des_fx.play()
             self.kill()
 
@@ -54,12 +46,15 @@ class Civilian(People):
         self.rect.x = x
         self.rect.y = y
 
+    def _move(self):
+        self.position = [self.rect.x - 17, self.rect.y - 50]
+
     def update(self):
         self._animate()
-        self.__move()
-        self.__collision_cars()
+        self._move()
+        self._collision_cars()
         self.__collotion_destination()
-        self.__collision_obstacles()
+        self._collision_obstacles()
 
     def render(self, screen):
         if self.bring_player:

@@ -5,31 +5,32 @@ fonts = {
     'Galindo-Regular': 'assets/fonts/Galindo-Regular.ttf'
 }
 
+# Membuat karakter tulisan.
 class Text:
     
     def __init__(self, text, position, size, color=(255, 255, 255), font='Galindo-Regular'):
-        self.color = color
-        self.position = position
-        self.size = size
-        self.string = str(text)
-        self.fontSystem = font
+        self.__color = color
+        self.__position = position
+        self.__size = size
+        self.__string = str(text)
+        self.__font_system = font
         self.update()
 
     def set_text(self, text):
-        self.string = str(text)
+        self.__string = str(text)
         self.update()
 
     def to_top_left(self):
-        self.text_rect = self.text.get_rect(topleft=self.position)
+        self.__text_rect = self.__text.get_rect(topleft=self.__position)
 
     def to_center(self):
-         self.text_rect = self.text.get_rect(center=self.position)
+         self.__text_rect = self.__text.get_rect(center=self.__position)
 
     def update(self):
         global fonts
-        self.font = pg.font.Font(fonts[self.fontSystem], self.size)
-        self.text  = self.font.render(self.string, True, self.color)
+        set_font = pg.font.Font(fonts[self.__font_system], self.__size)
+        self.__text  = set_font.render(self.__string, True, self.__color)
         self.to_center()
         
     def render(self, screen):
-        screen.blit(self.text, self.text_rect)
+        screen.blit(self.__text, self.__text_rect)

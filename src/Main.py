@@ -5,6 +5,7 @@ from src.Menu import Menu
 from src.Level import Level
 from src.Store import Store
 
+# Kelas utama sebagai game loop.
 class Main:
 
     def __init__(self, game_name):
@@ -16,13 +17,13 @@ class Main:
         pg.init()
         pg.mixer.init() 
         pg.display.set_caption(self.__game_name)
-        self.clock = pg.time.Clock()
+        self.__clock = pg.time.Clock()
 
         # Load file temporary.
         store = Store()
         store.load_checkpoints()
 
-    def __watch_page_change(self):
+    def __watch_page(self):
         if state.PAGE == 'menu':
             if not self.__menu: 
                 self.__menu = Menu()
@@ -56,6 +57,6 @@ class Main:
                 #     # print(pg.mouse.get_pos())
             
             # Update tampilan game.
-            self.__watch_page_change()
+            self.__watch_page()
             pg.display.update()
-            self.clock.tick(FPS)
+            self.__clock.tick(FPS)

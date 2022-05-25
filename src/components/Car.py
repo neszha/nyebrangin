@@ -2,6 +2,7 @@ import pygame as pg
 from src.config import *
 from src.components.Audio import Audio
 
+# Membangun sebuah karakter mobil.
 class Car(pg.sprite.Sprite):
     
     def __init__(self, path, position, direction, speed):

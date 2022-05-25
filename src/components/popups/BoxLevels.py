@@ -4,13 +4,15 @@ from src.components.PopUp import PopUp
 from src.components.Button import Button
 
 class Data: pass
+
+# Menampilkan popup daftar level.
 class BoxLevels(PopUp):
 
     def __init__(self):
         super().__init__('Levels', 'assets/images/backgrounds/levels.png')
-        self.__load_local_componenets()
+        self._load_local_components()
 
-    def __load_local_componenets(self):
+    def _load_local_components(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
 
         # Mengambil lokasi gambar.

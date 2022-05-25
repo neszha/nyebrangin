@@ -10,6 +10,7 @@ from src.components.popups.BoxLevels import BoxLevels
 from src.components.CarMenuAnimation import CarMenuAnimation as Car
 from src.components.CloudMenuAnimation import CloudMenuAnimation as Cloud
 
+# Menangani tampilan dan fitur menu utama game.
 class Menu:
     
     def __init__(self):

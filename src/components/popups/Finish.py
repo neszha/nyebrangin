@@ -6,6 +6,8 @@ from src.components.PopUp import PopUp
 from src.components.Button import Button
 
 class Data: pass
+
+# Menampilkan popup game finish.
 class Finish(PopUp):
 
     def __init__(self):
@@ -13,9 +15,9 @@ class Finish(PopUp):
         self.__trophy_number = 1
         self.__store = Store()
         super().__init__('FINISH!', 'assets/images/backgrounds/end.png', False)
-        self.__load_local_componenets()
+        self._load_local_components()
 
-    def __load_local_componenets(self):
+    def _load_local_components(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
         self.__texts = [
             Text(
@@ -40,11 +42,6 @@ class Finish(PopUp):
                 command0=self.__next_level, index=2
             )
         ]
-    
-    def set_item(self, time_left, trophy_number):
-        self.__time_left = time_left
-        self.__trophy_number = trophy_number
-        self.__load_local_componenets()
 
     def __next_level(self): 
         state.PAGE = 'menu'
@@ -55,6 +52,11 @@ class Finish(PopUp):
         if state.CURRENT_LEVEL < state.LEVEL_RUNNING: 
             state.CURRENT_LEVEL = state.LEVEL_RUNNING
         self.close()
+
+    def set_item(self, time_left, trophy_number):
+        self.__time_left = time_left
+        self.__trophy_number = trophy_number
+        self.__load_local_componenets()
 
     def render(self, screen):
         if self._show:

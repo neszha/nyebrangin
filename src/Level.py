@@ -16,7 +16,7 @@ from src.components.peoples.Civilian import Civilian
 from src.components.popups.WaitingPlay import WaitingPlay
 from src.components.obstacles.ForbiddenArea import ForbiddenArea
 
-# class Data: pass
+# Menjalankan level yang sedang berjalan.
 class Level:
     
     def __init__(self):

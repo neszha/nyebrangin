@@ -2,6 +2,7 @@ import pygame as pg
 from src.config import *
 from src.components.Text import Text
 
+# Handdle tampilan header game.
 class GameHeader:
     
     def __init__(self):

@@ -6,6 +6,8 @@ from src.components.PopUp import PopUp
 from src.components.Button import Button
 
 class Data: pass
+
+# Menampilkan popup pause game.
 class WaitingPlay(PopUp):
 
     def __init__(self, start_command):
@@ -16,9 +18,9 @@ class WaitingPlay(PopUp):
         text = f'Level {state.LEVEL_RUNNING}'
         bg = 'assets/images/backgrounds/settings.png'
         super().__init__(text, bg, False)
-        self.__load_local_componenets()
+        self._load_local_components()
 
-    def __load_local_componenets(self):
+    def _load_local_components(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
         text_pos_x = (WIDTH/2)
         text_pos_y = (HEIGTH/2) - (bg_size_y/2) + 140

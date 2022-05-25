@@ -2,13 +2,14 @@ import pygame as pg
 from src.config import *
 from random import randrange
 
+# Membuat karakter animasi mobil untuk halaman menu.
 class CarMenuAnimation:
 
     def __init__(self, direction, speed):
-        self.direction = direction #('to-left', 'to-right')
-        self.speed = speed
-        self.positions = [0, 566]
-        self.patch_cars = [
+        self.__direction = direction # ('to-left', 'to-right')
+        self.__speed = speed
+        self.__position = [0, 566]
+        self.__patch_cars = [
             'assets/images/cars/horizontal/baby.png',
             'assets/images/cars/horizontal/sedan.png',
             'assets/images/cars/horizontal/sport.png',
@@ -18,28 +19,28 @@ class CarMenuAnimation:
 
     def __load_components(self):
         # Mengacak jenis mobil.
-        use_car = self.patch_cars[randrange(0, len(self.patch_cars))]
-        self.car = pg.image.load(use_car).convert_alpha()
-        if self.direction == 'to-left':
-            self.car = pg.transform.flip(self.car, True, False)
-            self.positions[1] -= 12
+        use_car = self.__patch_cars[randrange(0, len(self.__patch_cars))]
+        self.__car = pg.image.load(use_car).convert_alpha()
+        if self.__direction == 'to-left':
+            self.__car = pg.transform.flip(self.__car, True, False)
+            self.__position[1] -= 12
 
         # Mengacak poisis x mobil.
-        self.positions[0] = randrange(0, WIDTH)
+        self.__position[0] = randrange(0, WIDTH)
 
     def render(self, screen):
         # Update posisi mobil berdasarkan arah gerak.
-        if self.direction == 'to-right':
-            self.positions[0] += self.speed
-            if self.positions[0] > (WIDTH + 100): 
-                self.positions[0] = -100
-                self.speed = randrange(2, 6)
-        elif self.direction == 'to-left':
-            self.positions[0] -= self.speed
-            if self.positions[0] < -100: 
-                self.positions[0] = WIDTH + 100
-                self.speed = randrange(2, 6)
+        if self.__direction == 'to-right':
+            self.__position[0] += self.__speed
+            if self.__position[0] > (WIDTH + 100): 
+                self.__position[0] = -100
+                self.__speed = randrange(2, 6)
+        elif self.__direction == 'to-left':
+            self.__position[0] -= self.__speed
+            if self.__position[0] < -100: 
+                self.__position[0] = WIDTH + 100
+                self.__speed = randrange(2, 6)
 
         # Render mobil ke layar.
-        self.car_rect = self.car.get_rect(midbottom = self.positions)
-        screen.blit(self.car, self.car_rect)
+        car_rect = self.__car.get_rect(midbottom = self.__position)
+        screen.blit(self.__car, car_rect)

@@ -1,6 +1,7 @@
 import pygame as pg
 import src.state as state
 
+# Kelas untuk membuat dan menontrol audio.
 class Audio:
 
     def __init__(self, path, audio_type='sound_fx', volume=0.5):

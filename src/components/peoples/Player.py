@@ -3,27 +3,22 @@ from time import time
 from src.components.People import People
 from src.components.Audio import Audio
 
+# Membuat karakter player.
 class Player(People):
 
     def __init__(self, name, health, position, speed, header, obstacles, cars, civilians):
-        super().__init__(name, position)
+        super().__init__(name, position, cars, obstacles, header)
         self.health = health
         self.__ghost = False
         self.__show_character = True
         self.__speed = speed
-        self.__header = header
-        self.__obstacles = obstacles
-        self.__cars = cars
         self.__civilians = civilians
-        self.__object_id = { 'car': 0, 'civilian': 0}
         self.__key_pressed = { 'space': time() }
         self.__temp = {'speed': speed, 'ghost_delay': 0, 'ghost_blit': 0, 'footstep_fx': time()}
 
         self.__footstep_fx = Audio('assets/audios/effects/footsteps.mp3', 'sound_fx', 0.4)
-        self.__car_hit_fx = Audio('assets/audios/effects/hit-car.mp3', 'sound_fx', 0.3)
-        self.__header.health = self.health
+        self._header.health = self.health
         self.shadow.fill(pg.Color(0, 0, 0, 50))
-
 
     def __input_controls(self):
         keys = pg.key.get_pressed()
@@ -54,21 +49,13 @@ class Player(People):
         if keys[pg.K_w]: self.__speed = walk_speed
         else: self.__speed = self.__temp['speed']
 
-    def __move(self):
-        if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
-        self.rect.x += self.direction.x * self.__speed
-        self.__collision_obstacles('x')
-        self.rect.y += self.direction.y * self.__speed
-        self.__collision_obstacles('y')
-        self.position = [self.rect.x - 17, self.rect.y - 50]
-
     def __footstep(self):
         if  time() - self.__temp['footstep_fx'] > 0.8:
             self.__footstep_fx.play()
             self.__temp['footstep_fx'] = time()
         
-    def __collision_obstacles(self, direction):
-        for obstacle in self.__obstacles:
+    def _collision_obstacles(self, direction):
+        for obstacle in self._obstacles:
             if obstacle.rect.colliderect(self.rect) and not obstacle.is_danger():
                 if direction == 'x':
                     if self.direction.x > 0: self.rect.right = obstacle.rect.left
@@ -79,20 +66,20 @@ class Player(People):
             elif obstacle.rect.colliderect(self.rect) and obstacle.is_danger():
                 self.__reduce_health()
 
-    def __collision_cars(self):
-        for car in self.__cars:
+    def _collision_cars(self):
+        for car in self._cars:
             if car.rect.colliderect(self.rect):
-                if self.__object_id['car'] != id(car):
-                    self.__car_hit_fx.play()
+                if self._object_id['car'] != id(car):
+                    self._car_hit_fx.play()
                     self.__reduce_health()
-                    self.__object_id['car'] = id(car)
+                    self._object_id['car'] = id(car)
 
     def __collistion_civilians(self):
         for civilian in self.__civilians:
             if civilian.rect.colliderect(self.rect):
                 civilian.show_destination = True
                 civilian.shadow.fill(pg.Color(102, 255, 51, 150))
-                self.__object_id['civilian'] = id(civilian)
+                self._object_id['civilian'] = id(civilian)
             else:
                 civilian.show_destination = False
 
@@ -115,7 +102,7 @@ class Player(People):
         self.__ghost = True
         self.__temp['ghost_delay'] = time() + 2
         self.health -= 1
-        self.__header.health = self.health
+        self._header.health = self.health
 
     def __bring_civilian_collapse(self):
         bring_delay = 0.2
@@ -136,11 +123,19 @@ class Player(People):
             if self.__temp['ghost_blit'] >= 3: self.__show_character = True
             if self.__temp['ghost_blit'] >= 6: self.__temp['ghost_blit'] = 0
 
+    def _move(self):
+        if self.direction.magnitude() != 0: self.direction = self.direction.normalize()
+        self.rect.x += self.direction.x * self.__speed
+        self._collision_obstacles('x')
+        self.rect.y += self.direction.y * self.__speed
+        self._collision_obstacles('y')
+        self.position = [self.rect.x - 17, self.rect.y - 50]
+
     def update(self):
         self.__input_controls()
         self._animate()
-        self.__move()
-        self.__collision_cars()
+        self._move()
+        self._collision_cars()
         self.__collistion_civilians()
         self.__follow_me()
 

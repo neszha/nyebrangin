@@ -4,13 +4,14 @@ from src.components.Text import Text
 from src.components.PopUp import PopUp
 from src.components.Button import Button
 
+# Menampilkan popup game over.
 class GameOver(PopUp):
 
     def __init__(self):
         super().__init__('GAME OVER!', 'assets/images/backgrounds/settings.png', False)
-        self.__load_local_componenets()
+        self._load_local_components()
 
-    def __load_local_componenets(self):
+    def _load_local_components(self):
         [bg_size_x, bg_size_y] = self.background.get_size()
         self.__texts = [
             Text(

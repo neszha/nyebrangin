@@ -1,11 +1,12 @@
-from time import time
 import pygame as pg
+from time import time
 import src.state as state
 from src.components.Audio import Audio
 
 press_delay = 0.3 # Second.
 temp_time = time()
 
+# Digunakan dalam membentuk sebuah tombol dengen gambar.
 class Button:
     
     def __init__(self, path, positions, command0=False, command1=False, command_data=False, data=None, index=1):

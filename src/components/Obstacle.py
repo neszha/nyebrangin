@@ -1,5 +1,6 @@
 import pygame as pg
 
+# Membuat halangan bagi player.
 class Obstacle(pg.sprite.Sprite):
     
     def __init__(self, image, position, scale=1, rotation=0, danger=False, is_area=False):

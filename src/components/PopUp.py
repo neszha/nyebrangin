@@ -3,8 +3,10 @@ import src.state as state
 from src.config import *
 from src.components.Text import Text
 from src.components.Button import Button
+from abc import ABC, abstractmethod
 
-class PopUp:
+# Menampilkan jendela popup.
+class PopUp(ABC):
     
     def __init__(self, title, background_path, btn_close=True):
         self._show = False
@@ -45,3 +47,9 @@ class PopUp:
         self._show = False
         state.SHOW_POPUP = False
         state.INDEX_LAYER = 1
+
+    @abstractmethod
+    def _load_local_components(self): pass
+    
+    @abstractmethod
+    def render(self): pass
