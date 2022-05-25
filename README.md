@@ -1,5 +1,7 @@
 # NYEBRANGIN - GAME BY PULANGMEN
 
+<img src="docs/text-logo.png" width="100%">
+
 ## Deskripsi Game
 Game `nyebrangin` menggambarkan tentang player yang ingin membantu civillian untuk menyebrangi jalan ke tujuan yang diinginkan. 
 
