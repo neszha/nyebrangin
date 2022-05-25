@@ -50,7 +50,7 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 
 ## Kontrol Game
 - `Control Key`: Digunakan untuk menggerakan player ke atas, bawah, kanan, dan kiri.
-- `w`: igunakan untuk mengaktifkan walk mode pada player. Karena secara default, player menggunaka run mode dalam bergerak.
+- `w`: Digunakan untuk mengaktifkan `walk mode` pada player. Karena secara default, player menggunaka  `run mode` dalam bergerak.
 - `SPACE`: Digunakan untuk membawa dan melepas civilian.
 - `esc`: Digunakan untuk menghentikan game sementara.
 
