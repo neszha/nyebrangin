@@ -54,6 +54,8 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 - Membawa atau melepas civilian: Dekati civilian dan tekan tombol <code>SPACE</code> untuk mulai membawa civilian. Selain itu, tombol <code>SPACE</code> juga digunakan untuk melepas civilian.
 - Game Pause: <code>SPACE</code> digunakan untuk menghentikan game sementara.
 
+- `Control Key`: Digunakan untuk menggerakan player ke atas, bawah, kanan, dan kiri.
+
 ## UML Class Diagram
 <img src="docs/UML Class Final - Nyebrangin.png" width="800">
 
