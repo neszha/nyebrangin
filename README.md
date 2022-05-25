@@ -49,12 +49,10 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 - Game Finish: Terjadi apabila semua civilian berhasil sampai ke tujian dengen durasi waktu dan nyawa player yang masih tersisa.
 
 ## Kontrol Game
-- Control pergerakan player: Mengunakan control key (atas, bawah, kanan, dan kiri).
-- Mode berjalan: Secara default, pergerakan player berapa pada mode run. Mode berjalan diaktifkan dengen menekan tombol <code>w</code>.
-- Membawa atau melepas civilian: Dekati civilian dan tekan tombol <code>SPACE</code> untuk mulai membawa civilian. Selain itu, tombol <code>SPACE</code> juga digunakan untuk melepas civilian.
-- Game Pause: <code>SPACE</code> digunakan untuk menghentikan game sementara.
-
 - `Control Key`: Digunakan untuk menggerakan player ke atas, bawah, kanan, dan kiri.
+- `w`: igunakan untuk mengaktifkan walk mode pada player. Karena secara default, player menggunaka run mode dalam bergerak.
+- `SPACE`: Digunakan untuk membawa dan melepas civilian.
+- `esc`: Digunakan untuk menghentikan game sementara.
 
 ## UML Class Diagram
 <img src="docs/UML Class Final - Nyebrangin.png" width="800">
