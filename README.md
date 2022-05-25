@@ -7,7 +7,7 @@ Game `nyebrangin` menggambarkan tentang player yang ingin membantu civillian unt
 
 Player memiliki beberapa kesempatan bermain berupa nyawa yang akan berkurang setiap kali tertabrak kendaraan atau jatuh ke dalam lubang. Misi utama seorang player yaitu membantu civilian yang ingin menyebrang dalam durasi waktu tertentu untuk dapat ke level yang lebih tinggi. Semakin tinggi tingkatan level, maka tingkat kesulitan juga akan semakin tinggi.
 
-## Dependensi Paket
+## Dependensi atau Library
 - pygame: Library utama untuk menjalankan game di python.
 - random: Library untuk menghandle fungsi-fungsi yang bersifat random. 
 - os: Library ini digunakan unuk berintraksi dengen sistem operasi.
