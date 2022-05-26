@@ -40,6 +40,9 @@ Membuat dan menjalankan container dari sebuah image:
 ```
 # docker run -it nyebrangin
 ```
+
+`~ NOTE:` Saat ini, container yang dibuat belum dapat menjalankan kode game yang sebenarnya dikarenakan masalah device audio pada pygame yang belum bisa diexpose keluar container. Kami belum menemukan cara untuk menyelesaikannya. Namun, untuk menerapkannya, kami membuat file `blank.py` sebagai penggantinya yang tidak menggunakan fitur audio pada pygame.
+
 <img src="docs/menu.png" width="100%"> 
 <img src="docs/01-level-list.png" width="100%"> 
 
