@@ -14,20 +14,6 @@ Player memiliki beberapa kesempatan bermain berupa nyawa yang akan berkurang set
 - datetime: Library ini digunakan untuk menggenerate data waktu.
 - json: Library ini digunakan unuk mengelola data dengen tipe data JSON.
 
-## Menjalankan Game
-Sebelum menjalankan game, pastikan semua paket atau library sudah terinstall:
-
-```
-# pip install pygame
-# pip3 install pygame (alternative command)
-```
-Perintah untuk menjalankan game:
-```
-# python nyebrangin.py
-# python3 nyebrangin.py (alternative command)
-# py nyebrangin.py (alternative command)
-```
-
 ## Menjalankan Game (Container Docker)
 Membuat docker image: 
 ```
@@ -42,6 +28,20 @@ Membuat dan menjalankan container dari sebuah image:
 ```
 
 `~ NOTE:` Saat ini, container yang dibuat belum dapat menjalankan kode game yang sebenarnya dikarenakan masalah device audio pada pygame yang belum bisa diexpose keluar container. Kami belum menemukan cara untuk menyelesaikannya. Namun, untuk menerapkannya, kami membuat file `blank.py` sebagai penggantinya yang tidak menggunakan fitur audio pada pygame.
+
+## Menjalankan Game
+Sebelum menjalankan game, pastikan semua paket atau library sudah terinstall:
+
+```
+# pip install pygame
+# pip3 install pygame (alternative command)
+```
+Perintah untuk menjalankan game:
+```
+# python nyebrangin.py
+# python3 nyebrangin.py (alternative command)
+# py nyebrangin.py (alternative command)
+```
 
 <img src="docs/menu.png" width="100%"> 
 <img src="docs/01-level-list.png" width="100%"> 
