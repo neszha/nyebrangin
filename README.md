@@ -30,6 +30,8 @@ Membuat dan menjalankan container dari sebuah image:
 
 `~ NOTE:` Saat ini, container yang dibuat belum dapat menjalankan kode game yang sebenarnya dikarenakan masalah device audio pada pygame yang belum bisa diexpose keluar container. Kami belum menemukan cara untuk menyelesaikannya. Namun, untuk menerapkannya, kami membuat file `blank.py` sebagai penggantinya yang tidak menggunakan fitur audio pada pygame.
 
+[![Docker Tutorial for Beginners](https://img.youtube.com/vi/pTFZFxd4hOI/0.jpg)](https://www.youtube.com/watch?v=pTFZFxd4hOI)
+
 ## Menjalankan Game
 Sebelum menjalankan game, pastikan semua paket atau library sudah terinstall:
 
