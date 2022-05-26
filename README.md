@@ -28,8 +28,18 @@ Perintah untuk menjalankan game:
 # py nyebrangin.py (alternative command)
 ```
 
-## Cara Bermain 
+## Menjalankan Game (Container Docker)
+Membuat docker image: 
+```
+# docker build -t nyebrangin .
+```
 
+Game tidak akan langsung terbuka seteleh image berhasil terbuat. Maka, image perlu dibuat menjadi sebuah container yang nantinya dapat menjalankan kode game yang ada di dalamnya.
+
+Membuat dan menjalankan container dari sebuah image:
+```
+# docker run -it nyebrangin
+```
 <img src="docs/menu.png" width="100%"> 
 <img src="docs/01-level-list.png" width="100%"> 
 
@@ -61,14 +71,13 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 
 ## Pengembang Game
  
-| KELOMPOK : RB05 - PULANGMEN |
+| PULANGMEN TEAM |
 | ---------------- |
 
 | NIM  | Nama | Sebagai |
 | ----- | --- | --- |
 | 120140043  | Irsan Romardi Harahap  | Leader and Tester |
 | 120140149  | Dewi Anggraini  | Level Designer |
-| 119140117  | Chantika Aurrelia | Game Designer and Artist |
 | 120140039  | Tara Nadani Mozart  | Game Designer and Artist |
 | 120140189  | Fanesa Hadi Pramana  | Programmer |
 | 120140071  | Muhammad Rizky Fahreza Gusti  | Programmer |
