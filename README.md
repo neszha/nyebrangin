@@ -26,6 +26,7 @@ Membuat dan menjalankan container dari sebuah image:
 ```
 # docker run -it nyebrangin
 ```
+`~ NOTE:` Container pada docker sebenernya tidak mendukung program GUI. Untuk itu, diperlukan program pihak ketiga sebagai jembatan antara container dengan sistem operasi yang menjalankannya. Jika mengunakan windows, anda perlu menginstall program <a href="https://sourceforge.net/projects/vcxsrv/">Windows X Server</a> sebelum menjalankan container.
 
 `~ NOTE:` Saat ini, container yang dibuat belum dapat menjalankan kode game yang sebenarnya dikarenakan masalah device audio pada pygame yang belum bisa diexpose keluar container. Kami belum menemukan cara untuk menyelesaikannya. Namun, untuk menerapkannya, kami membuat file `blank.py` sebagai penggantinya yang tidak menggunakan fitur audio pada pygame.
 
