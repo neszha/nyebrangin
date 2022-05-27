@@ -80,10 +80,11 @@ Setelah level terbuka, misi player yaitu membantu para civilian untuk menyebrang
 | PULANGMEN TEAM |
 | ---------------- |
 
-| NIM  | Nama | Sebagai |
-| ----- | --- | --- |
-| 120140043  | Irsan Romardi Harahap  | Leader and Tester |
-| 120140149  | Dewi Anggraini  | Level Designer |
-| 120140039  | Tara Nadani Mozart  | Game Designer and Artist |
-| 120140189  | Fanesa Hadi Pramana  | Programmer |
-| 120140071  | Muhammad Rizky Fahreza Gusti  | Programmer |
+| NIM | Kelas  | Nama | Sebagai |
+| ----- | ----- | --- | --- |
+| 120140043  | RB | Irsan Romardi Harahap  | Leader and Tester |
+| 120140149  | RB | Dewi Anggraini  | Level Designer |
+| 119140117  | - | Chantika Aurrelia  | Game Designer and Artist |
+| 120140039  | RB | Tara Nadani Mozart  | Game Designer and Artist |
+| 120140189  | RB | Fanesa Hadi Pramana  | Programmer |
+| 120140071  | RB | Muhammad Rizky Fahreza Gusti  | Programmer |
