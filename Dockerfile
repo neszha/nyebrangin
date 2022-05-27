@@ -6,8 +6,8 @@ RUN apt-get update
 RUN apt-get install python3-pygame -y
 RUN pip3 install pygame
 
-WORKDIR "/game"
-
 ENV DISPLAY=host.docker.internal:0.0
 
-CMD ["python3", "./blank.py"]
+WORKDIR "/game"
+
+CMD ["python3", "./nyebrangin.py"]
