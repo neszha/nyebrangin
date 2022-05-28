@@ -31,6 +31,7 @@ Membuat dan menjalankan container dari sebuah image:
 `~ NOTE:` Saat ini, container yang dibuat belum dapat menjalankan kode game yang sebenarnya dikarenakan masalah device audio pada pygame yang belum bisa diexpose keluar container. Kami belum menemukan cara untuk menyelesaikannya. Namun, untuk menerapkannya, kami membuat file `blank.py` sebagai penggantinya yang tidak menggunakan fitur audio pada pygame.
 
 [![BUILD PYTHON GAME INTO DOCKER CONTAINER - IF2223 - PyGame Project](https://img.youtube.com/vi/Zk7xnmVfwHc/0.jpg)](https://www.youtube.com/watch?v=Zk7xnmVfwHc)
+<a href="https://www.youtube.com/watch?v=Zk7xnmVfwHc">BUILD PYTHON GAME INTO DOCKER CONTAINER</a>
 
 ## Menjalankan Game
 Sebelum menjalankan game, pastikan semua paket atau library sudah terinstall:
