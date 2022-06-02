@@ -2,7 +2,7 @@ class Data: pass
 
 # Game.
 game = Data()
-game.coutdown = 250 # Seconds.
+game.coutdown = 180 # Seconds.
 game.trophy = [
     { 'time_left': 200, 'trophy': 3 },
     { 'time_left': 110, 'trophy': 2 },
